@@ -448,18 +448,30 @@
     card.append(foot);
     return card;
   }
+  // El libro muestra las cartas por tandas para que la página no se haga interminable.
+  const WALL_STEP = 12;
+  let wallEntries = [],
+    wallShown = 0;
   function showWall() {
-    const count = $('#messageWall').children.length;
+    const count = wallEntries.length;
     $('#libro').hidden = !count;
     $('#wallCount').textContent =
       count === 1 ? 'Una carta en el libro' : `${count} cartas en el libro`;
+    $('#wallMore').hidden = wallShown >= count;
+  }
+  function showMoreMessages() {
+    const next = wallEntries.slice(wallShown, wallShown + WALL_STEP);
+    $('#messageWall').append(...next.map(messageCard));
+    wallShown += next.length;
+    showWall();
   }
   async function loadMessages() {
     if (!backendEnabled()) return;
     try {
-      const entries = await window.AdrianaServicios.messages();
-      $('#messageWall').replaceChildren(...entries.map(messageCard));
-      showWall();
+      wallEntries = await window.AdrianaServicios.messages();
+      wallShown = 0;
+      $('#messageWall').replaceChildren();
+      showMoreMessages();
     } catch {
       /* Sin permiso de lectura o sin conexión: el libro simplemente no se muestra. */
     }
@@ -500,9 +512,10 @@
       await window.AdrianaServicios.message(name, text, messageAttempt.id);
       $('#privateMessageForm').hidden = true;
       $('#messageSuccess').hidden = false;
-      $('#messageWall').prepend(
-        messageCard({ nombre: name, mensaje: text, creado: new Date().toISOString() }),
-      );
+      const entry = { nombre: name, mensaje: text, creado: new Date().toISOString() };
+      wallEntries.unshift(entry);
+      wallShown += 1;
+      $('#messageWall').prepend(messageCard(entry));
       showWall();
       $('#messageSuccess').scrollIntoView({
         behavior: reduced ? 'instant' : 'smooth',
@@ -650,6 +663,7 @@
 
   // ===== Envío del formulario del libro de mensajes =====
   $('#privateMessageForm').addEventListener('submit', submitPrivateMessage);
+  $('#wallMore').addEventListener('click', showMoreMessages);
 
   // ===== Barra dorada que marca el avance de lectura =====
   let ticking = false;

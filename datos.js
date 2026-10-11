@@ -229,6 +229,7 @@ window.EVENTO_BASE = {
     muroTitulo: 'Palabras para\nAdriana',
     muroVacio: 'Un deseo, un recuerdo, unas palabras que siempre pueda volver a leer.',
     muroLibro: 'Lo que la sociedad\nle ha escrito.',
+    muroMas: 'Ver más cartas',
     volverInvitacion: 'Volver a la invitación',
     despedida: 'La temporada apenas comienza.',
     gracias: 'Gracias por ser parte de este momento.',

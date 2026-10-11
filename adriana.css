@@ -503,6 +503,7 @@
 .wall-card footer{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-top:16px;padding-top:12px;border-top:1px solid #c4a66b66}
 .wall-card cite{font-family:var(--script);font-style:normal;font-size:25px;line-height:1.2;color:#80613e;overflow-wrap:anywhere}
 .wall-card time{font-size:10px;letter-spacing:.06em;color:#707469}
+.wall-more{display:flex;margin:18px auto 0}
 
 /* La confirmación en su propia página. */
 .footer-rsvp{margin-top:26px}
