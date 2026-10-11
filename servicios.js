@@ -88,7 +88,7 @@ window.AdrianaServicios = (() => {
       const headers = { apikey: c.key };
       if (!c.key.startsWith('sb_publishable_')) headers.Authorization = `Bearer ${c.key}`;
       const response = await fetch(
-        `${c.url}/rest/v1/mensajes_adriana?select=nombre,mensaje,creado&order=creado.desc&limit=150`,
+        `${c.url}/rest/v1/mensajes_adriana?select=nombre,mensaje,creado&order=creado.desc&limit=1000`,
         { headers, signal: controller.signal },
       );
       if (!response.ok) throw new Error('read-failed');

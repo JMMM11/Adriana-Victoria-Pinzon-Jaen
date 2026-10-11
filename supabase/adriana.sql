@@ -58,6 +58,3 @@ create policy "Invitados leen el libro de mensajes"
 -- Las confirmaciones se leen y exportan únicamente desde el proyecto de la anfitriona.
 grant all on public.mensajes_adriana, public.confirmaciones_adriana to service_role;
 commit;
-
--- Para leer los mensajes en el SQL Editor (o en Table Editor):
--- select nombre, mensaje, creado from public.mensajes_adriana order by creado desc;
