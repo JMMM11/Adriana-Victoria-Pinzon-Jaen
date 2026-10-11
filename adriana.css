@@ -429,10 +429,8 @@
 .dress-people dt{font-size:10px;letter-spacing:.12em}
 .dress-people dd{font-family:var(--serif);font-size:25px;line-height:1.2;color:var(--ink);margin-top:4px}
 .dress-figure{justify-self:center;width:100%;max-width:340px;padding:34px 26px 20px;background:#fffaf4;border:1px solid #c4a66b99;border-radius:120px 120px 6px 6px/46px 46px 6px 6px;outline:1px solid #c4a66b55;outline-offset:7px;text-align:center}
-.dress-figure svg{display:block;width:100%;height:auto}
-.dress-ink{fill:#2f4038}
-.dress-paper{fill:#fffaf4}
-.dress-line{fill:none;stroke:#fffaf4;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dress-icons{display:flex;align-items:flex-end;justify-content:center;gap:7%}
+.dress-icons img{width:auto;height:auto;max-width:46%;max-height:230px}
 .dress-figure figcaption{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3;color:#6b705d;margin-top:14px;padding-top:14px;border-top:1px solid #c4a66b66}
 
 /* Los regalos tienen su propia sección. */
