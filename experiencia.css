@@ -160,9 +160,9 @@
 .gallery-photo>button:hover img{transform:scale(1.025)}
 
 /* Confirmación de asistencia */
-.acceptance-seal{position:relative;margin:0 auto 20px;width:102px;height:102px;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(-12deg)}
-.acceptance-seal>span{font-family:var(--script);font-size:33px;line-height:1.15;z-index:1}
-.acceptance-seal>small{font-family:var(--serif);font-size:13px;letter-spacing:.12em;margin-top:4px}
+.acceptance-seal{position:relative;margin:26px auto 10px;width:132px;height:132px;display:flex;flex-direction:column;justify-content:center;align-items:center;transform:rotate(-12deg)}
+.acceptance-seal>span{font-family:var(--script);font-size:30px;line-height:1.15;z-index:1}
+.acceptance-seal>small{font-family:var(--serif);font-size:15px;letter-spacing:.12em;margin-top:4px}
 .acceptance-seal.is-stamped{animation:sealStamp .7s cubic-bezier(.22,.7,.3,1) both}
 
 /* Pie de página */

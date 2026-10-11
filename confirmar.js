@@ -105,7 +105,8 @@
     }
   }
 
-  // ===== Código del pase y mensaje de WhatsApp =====
+  // ===== Referencia interna de cada respuesta y mensaje de WhatsApp =====
+  // La base de datos pide una referencia única por respuesta; el invitado no la ve.
   function codeFor(name) {
     const letters = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
     const bytes = new Uint8Array(6);
@@ -128,11 +129,10 @@
     if (record.acompanantes?.length) text += '\nAcompañantes: ' + record.acompanantes.join(', ');
     if (record.cancion) text += '\nCanción: ' + record.cancion;
     if (record.mensaje) text += '\nMi mensaje: ' + record.mensaje;
-    if (record.remote && record.asiste === 'si') text += '\nCódigo del pase: ' + record.codigo;
     return text;
   }
 
-  // ===== Tarjeta de respuesta: sello, QR del pase y botón de WhatsApp =====
+  // ===== Tarjeta de respuesta: sello de aceptado y botón de WhatsApp =====
   function showResponse(record, scroll = true) {
     $('#rsvpForm').hidden = true;
     $('#responseCard').hidden = false;
@@ -154,21 +154,10 @@
       : 'Un último paso…';
     $('#responseGuest').textContent = record.nombre;
     $('#responseStatus').textContent = confirmed
-      ? data.rsvp.mensajeGracias
+      ? record.asiste === 'si'
+        ? data.rsvp.mensajeGracias
+        : data.rsvp.mensajeNoAsiste
       : 'Envía tu respuesta por WhatsApp para hacerla llegar a los anfitriones.';
-    $('#passCode').hidden = !(confirmed && record.asiste === 'si');
-    $('#passQr').hidden = !(confirmed && record.asiste === 'si');
-    $('#passCode').textContent = record.codigo || '';
-    $('#passQr').replaceChildren();
-    if (confirmed && record.asiste === 'si' && typeof qrcode === 'function') {
-      const qr = qrcode(0, 'M');
-      qr.addData(`${data.nombreCompleto} | ${record.codigo} | ${data.fechaTexto}`);
-      qr.make();
-      const img = node('img');
-      img.src = qr.createDataURL(4, 4);
-      img.alt = 'QR del código de referencia del pase';
-      $('#passQr').append(img);
-    }
     const link = $('#whatsappLink');
     link.hidden = !validPhone();
     $('#whatsappNote').hidden = !validPhone();

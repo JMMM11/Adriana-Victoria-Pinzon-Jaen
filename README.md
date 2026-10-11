@@ -8,7 +8,7 @@ Invitación digital: el invitado entra a la casa, recibe una carta de Lady Whist
 - Fotos, WhatsApp y conexión a la base de datos: `configuracion.js`. Las fotos se guardan en `assets/fotos/`.
 - Textos y datos de la fiesta: `datos.js`.
 - Estilos, en el orden en que se cargan: `estilos.css` (base), `experiencia.css` (entrada y animaciones) y `adriana.css` (colores y ajustes para teléfono).
-- Comportamiento: `app.js` (invitación), `experiencia.js` (entrada y jardín), `confirmar.js` (confirmación), `musica.js` (música) y `servicios.js` (envíos a Supabase). `qrcode.js` es la librería que dibuja el QR del pase.
+- Comportamiento: `app.js` (invitación), `experiencia.js` (entrada y jardín), `confirmar.js` (confirmación), `musica.js` (música) y `servicios.js` (envíos a Supabase).
 - Mensajes y confirmaciones: tablas `mensajes_adriana` y `confirmaciones_adriana` del proyecto de Supabase (estructura en `supabase/adriana.sql`).
 
 ## Ver en local

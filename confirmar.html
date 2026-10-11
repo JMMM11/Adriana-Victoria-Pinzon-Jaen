@@ -55,7 +55,7 @@
           <div id="companions"></div>
           <fieldset class="attendance">
             <legend data-value="rsvp.etiquetaAsistencia"></legend>
-            <div class="attendance-options"><label><input type="radio" name="asiste" value="si" required><span data-value="rsvp.opcionSi"></span><i>↗</i></label><label><input type="radio" name="asiste" value="no"><span data-value="rsvp.opcionNo"></span></label></div>
+            <div class="attendance-options"><label><input type="radio" name="asiste" value="si" required><span data-value="rsvp.opcionSi"></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></label><label><input type="radio" name="asiste" value="no"><span data-value="rsvp.opcionNo"></span></label></div>
             <p class="field-error" id="attendanceError" hidden></p>
           </fieldset>
           <div class="field"><label for="guestSong" data-value="rsvp.etiquetaCancion"></label><input id="guestSong" name="cancion" maxlength="200"></div>
@@ -65,14 +65,13 @@
           <p class="field-error" id="submitError" role="alert" hidden></p>
         </form>
 
-        <!-- ===== Respuesta guardada: sello, QR del pase y envío por WhatsApp ===== -->
+        <!-- ===== Respuesta guardada: sello de aceptado y envío por WhatsApp ===== -->
         <div class="response-card" id="responseCard" hidden>
-          <div class="acceptance-seal" id="acceptedSeal" hidden><span data-text="selloAceptado">Accepted</span><small data-value="iniciales">AV</small></div>
           <p class="eyebrow" id="responseEyebrow"></p>
           <h3 id="responseTitle"></h3>
           <p id="responseGuest"></p>
-          <div id="passQr" class="pass-qr" hidden></div>
-          <p class="pass-code" id="passCode" hidden></p>
+          <!-- Sello de aceptado, solo para quien confirma que asiste -->
+          <div class="acceptance-seal" id="acceptedSeal" hidden><span data-text="selloAceptado">Accepted</span><small data-value="iniciales">AV</small></div>
           <p id="responseStatus"></p>
           <a class="button button-ink" id="whatsappLink" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg><span data-text="whatsappBoton"></span></a>
           <p class="form-note" id="whatsappNote" data-text="whatsappNota"></p>
@@ -94,11 +93,10 @@
   <audio id="eventAudio" src="Audio.mp3" loop preload="auto"></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <!-- ===== Scripts, en este orden: configuración, datos, servicios, QR y luego la página ===== -->
+  <!-- ===== Scripts, en este orden: configuración, datos, servicios y luego la página ===== -->
   <script src="configuracion.js"></script>
   <script src="datos.js"></script>
   <script src="servicios.js"></script>
-  <script src="qrcode.js"></script>
   <script src="confirmar.js"></script>
   <script src="musica.js"></script>
 </body>

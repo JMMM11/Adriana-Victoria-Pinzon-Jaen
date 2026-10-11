@@ -417,8 +417,8 @@
 /* Textos largos justificados; la última línea queda centrada. */
 
 /* Todos los párrafos van justificados. */
-.section-description,.gazette-column p,.letter-text,.hero-intro,.dress-note,.gift-copy>p:not(.gift-envelopes),.gallery-intro>p,.message-privacy,.wall-text,.footer-thanks,.form-note,.response-card>p:not(.eyebrow):not(.pass-code){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
-.gifts .gift-copy>p:not(.gift-envelopes),.footer-thanks,.response-card>p:not(.eyebrow):not(.pass-code){text-align-last:center}
+.section-description,.gazette-column p,.letter-text,.hero-intro,.dress-note,.gift-copy>p:not(.gift-envelopes),.gallery-intro>p,.message-privacy,.wall-text,.footer-thanks,.form-note,.response-card>p:not(.eyebrow){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.gifts .gift-copy>p:not(.gift-envelopes),.footer-thanks,.response-card>p:not(.eyebrow){text-align-last:center}
 .celebration-honoree{font-family:var(--script);font-size:clamp(38px,3.6vw,52px);line-height:1.2;color:#80613e;margin:6px 0 10px}
 .celebration-date{letter-spacing:.02em}
 

@@ -148,6 +148,7 @@ window.EVENTO_BASE = {
     fechaLimite: '',
     whatsapp: '',
     mensajeGracias: 'Gracias por acompañar a Adriana en esta nueva temporada.',
+    mensajeNoAsiste: 'Muchas gracias por tomarte el tiempo de ver esta invitación.',
     titulo: 'Confirmar tu\nasistencia',
     subtitulo: 'Las mejores historias se escriben en buena compañía. Me encantaría contar contigo.',
     etiquetaNombre: 'Nombre y apellido',

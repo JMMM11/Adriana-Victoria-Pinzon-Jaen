@@ -16,7 +16,6 @@ const publicFiles = new Set([
   'configuracion.js',
   'datos.js',
   'servicios.js',
-  'qrcode.js',
   'app.js',
   'experiencia.js',
   'musica.js',
