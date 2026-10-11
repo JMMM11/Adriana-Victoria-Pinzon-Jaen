@@ -55,7 +55,7 @@
 /* Confirmación de asistencia */
 .rsvp{background:#e3e8dc}
 .rsvp-form-wrap{position:relative;padding:36px 30px 30px;border:1px solid #ad966e88;border-radius:95px 95px 7px 7px/35px 35px 7px 7px;background:linear-gradient(145deg,#f9f6ee80,#f8d7e735)}
-.rsvp-form-wrap::before{content:'❦';position:absolute;left:50%;top:-18px;transform:translateX(-50%);font-family:var(--serif);font-size:29px;line-height:1;background:#e3e8dc;padding:0 14px;color:var(--gold)}
+.rsvp-form-wrap::before{content:'';position:absolute;left:50%;top:-12px;transform:translateX(-50%);width:99px;height:24px;background:#e3e8dc url('assets/ornamento.svg') center/83px 19px no-repeat}
 .rsvp-intro h2{font-size:clamp(46px,5vw,73px)}
 .rsvp-form-wrap .button,.private-letter .button{background:#3d5145;color:#fcfaf4;border:1px solid #3d5145;border-radius:2px;min-height:51px}
 .rsvp-form-wrap .button:hover,.private-letter .button:hover{background:#4f6658}
