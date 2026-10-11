@@ -1,5 +1,6 @@
 -- Ejecutar en el SQL Editor del proyecto Supabase de la anfitriona.
--- Los visitantes pueden enviar, pero no leer, editar ni borrar mensajes.
+-- Los visitantes pueden enviar mensajes y leer el libro; no pueden editar ni borrar.
+-- Las confirmaciones solo se pueden enviar: nadie las lee desde la página.
 begin;
 
 create table if not exists public.mensajes_adriana (
@@ -47,7 +48,14 @@ create policy "Invitados confirman asistencia"
   on public.confirmaciones_adriana for insert to anon
   with check (evento = 'adriana-victoria-2026');
 
--- Lectura y exportación únicamente desde el proyecto de la anfitriona.
+-- El libro de mensajes se muestra en la invitación: nombre, mensaje y fecha.
+grant select (nombre, mensaje, creado) on public.mensajes_adriana to anon;
+drop policy if exists "Invitados leen el libro de mensajes" on public.mensajes_adriana;
+create policy "Invitados leen el libro de mensajes"
+  on public.mensajes_adriana for select to anon
+  using (evento = 'adriana-victoria-2026');
+
+-- Las confirmaciones se leen y exportan únicamente desde el proyecto de la anfitriona.
 grant all on public.mensajes_adriana, public.confirmaciones_adriana to service_role;
 commit;
 

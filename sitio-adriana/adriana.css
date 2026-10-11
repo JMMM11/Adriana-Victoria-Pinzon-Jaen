@@ -231,3 +231,104 @@
  .nav-bridgerton{grid-column:1/-1;grid-row:2;width:83px;height:57px}
  .nav-rsvp{grid-column:1/-1;grid-row:3}
 }
+
+/* La casa de la entrada: fotografía a sangre que se acerca hasta la puerta. */
+.arrival{background:#f5f0e6}
+.arrival-house{position:absolute;inset:0;overflow:hidden;opacity:0;z-index:1}
+.arrival-house picture{position:absolute;left:50%;top:50%;translate:-50% -50%;width:max(100vw,calc(100dvh * 1672 / 941));aspect-ratio:1672/941;transform-origin:49.8% 59.5%;display:block}
+.arrival-house img{display:block;width:100%;height:100%;object-fit:cover}
+.arrival-house::after{content:'';position:absolute;inset:0;background:linear-gradient(#f7f3e9 0,#f7f3e9f5 15%,#f7f3e9c4 21%,#f7f3e900 35%,#f7f3e900 72%,#f7f3e9eb 89%,#f7f3e9 100%);pointer-events:none}
+.arrival-heading>p:last-child{text-wrap:balance}
+.arrival-heading .eyebrow{color:#6f5b39}
+.arrival-caption{color:#4f4634}
+.arrival.is-playing .arrival-house{animation:houseArrival 10s ease both}
+.arrival.is-playing .arrival-house picture{animation:houseApproach 10s linear both}
+@keyframes houseArrival{0%{opacity:0}9%,41%{opacity:1}50%,100%{opacity:0}}
+@keyframes houseApproach{0%{transform:scale(1.02)}17%{transform:scale(1.07);animation-timing-function:cubic-bezier(.55,0,.85,.45)}50%,100%{transform:scale(3.4)}}
+/* La invitación guarda solo el nombre y el sello. */
+.invitation{display:block;min-height:0}
+
+/* Textos largos justificados; la última línea queda centrada. */
+/* Todos los párrafos van justificados. */
+.section-description,.gazette-column p,.letter-text,.hero-intro,.dress-note,.gift-copy>p:not(.gift-envelopes),.gallery-intro>p,.message-privacy,.wall-text,.footer-thanks,.form-note,.response-card>p:not(.eyebrow):not(.pass-code){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+.gifts .gift-copy>p:not(.gift-envelopes),.footer-thanks,.response-card>p:not(.eyebrow):not(.pass-code){text-align-last:center}
+
+.celebration-honoree{font-family:var(--script);font-size:clamp(38px,3.6vw,52px);line-height:1.2;color:#80613e;margin:6px 0 10px}
+.celebration-date{letter-spacing:.02em}
+
+/* Vestimenta: texto y figurín de referencia. */
+.details-grid{grid-template-columns:1.15fr .85fr;gap:8%}
+.dress-copy .eyebrow{margin-bottom:24px}
+.dress-people{display:flex;gap:34px;margin-top:20px}
+.dress-people dt{font-size:10px;letter-spacing:.12em}
+.dress-people dd{font-family:var(--serif);font-size:25px;line-height:1.2;color:var(--ink);margin-top:4px}
+.dress-figure{justify-self:center;width:100%;max-width:340px;padding:34px 26px 20px;background:#fffaf4;border:1px solid #c4a66b99;border-radius:120px 120px 6px 6px/46px 46px 6px 6px;outline:1px solid #c4a66b55;outline-offset:7px;text-align:center}
+.dress-figure svg{display:block;width:100%;height:auto}
+.dress-ink{fill:#2f4038}.dress-paper{fill:#fffaf4}.dress-line{fill:none;stroke:#fffaf4;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.dress-figure figcaption{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3;color:#6b705d;margin-top:14px;padding-top:14px;border-top:1px solid #c4a66b66}
+
+/* Los regalos tienen su propia sección. */
+.gifts{background:#e3e8dc;text-align:center}
+.gifts .gift-copy{max-width:540px;margin:0 auto;padding:0}
+.gift-art{display:block;width:132px;height:auto;margin:0 auto 26px}
+.gift-box{fill:#fffaf4;stroke:#3d493e;stroke-width:1.4}.gift-lid{fill:#f8d7e7;stroke:#3d493e;stroke-width:1.4}
+.gift-ribbon{fill:#c9a968}.gift-bow{fill:#dcc391;stroke:#8f7140;stroke-width:1.4;stroke-linejoin:round}.gift-knot{fill:#c9a968;stroke:#8f7140;stroke-width:1.4}
+.gift-bow-line{fill:none;stroke:#8f7140;stroke-width:1.2;stroke-linecap:round}.gift-shadow{fill:none;stroke:#3d493e33;stroke-width:5;stroke-linecap:round}.gift-spark{fill:#ae8b50}
+.gifts h2{font-size:clamp(40px,3.9vw,58px);white-space:pre-line}
+.gifts .gift-copy>p{font-size:13px;line-height:1.9;margin-top:22px}
+.gifts .gift-copy .gift-envelopes{font-size:30px;margin-top:26px;border-color:#ad966e}
+.gifts #giftStores{align-items:center}
+
+/* Espacios del álbum que esperan una fotografía. */
+.gallery-reserved-frame{aspect-ratio:1.3;display:grid;place-items:center;border:1px dashed #b89b65;border-radius:3px 3px 0 0;background:#fffaf475;font-family:var(--serif);font-size:70px;letter-spacing:-.08em;color:#b89b6599}
+.gallery-photo:nth-child(even) .gallery-reserved-frame{aspect-ratio:.78}
+.gallery-reserved figcaption>span:last-child{font-style:italic;color:#7b786b}
+
+@media(max-width:640px), (max-height:500px) and (pointer:coarse){
+ .arrival-heading{top:calc(66px + env(safe-area-inset-top))}
+ .gazette-body h2,.gazette-side{text-align:center}.gazette-side{align-items:center}
+ .gazette-column .handwritten{display:block;text-align:center}
+ .story-copy{text-align:center}
+ .gazette-column p,.story-copy .section-description,.dress-copy .section-description{text-align-last:center}
+ .gift-art{width:118px}
+ .celebration-honoree{font-size:30px;white-space:nowrap}
+ .details-grid{grid-template-columns:1fr;gap:34px}
+ .dress-copy{text-align:center}.dress-code{font-size:34px}.dress-people{justify-content:center;gap:28px}.dress-people dd{font-size:24px}
+ .dress-note{text-align:left;margin-left:auto;margin-right:auto}
+ .dress-figure{max-width:290px;padding:30px 22px 18px}
+ .gifts h2{font-size:42px}.gifts .gift-copy>p{font-size:15px;line-height:1.8}.gifts .gift-copy .gift-envelopes{font-size:30px}
+ .gallery-reserved-frame{font-size:58px}
+ .letter-text{font-size:22px}
+}
+.letter-signoff{margin-top:26px}
+
+/* El libro: los mensajes de los invitados en cuadrícula. */
+.message-wall{background:linear-gradient(160deg,#f8d7e73d,#e3e8dc);padding-top:70px}
+.wall-heading{text-align:center;margin-bottom:38px}
+.wall-heading h2{font-size:clamp(40px,3.9vw,58px);white-space:pre-line}
+.wall-heading p{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#606c5a;margin-top:16px}
+.wall-grid{list-style:none;margin:0 auto;padding:0;max-width:1180px;columns:3;column-gap:22px}
+.wall-card{break-inside:avoid;margin:0 0 22px;padding:24px 22px 18px;background:#fffbf4;border:1px solid #b8996a77;border-radius:4px 34px 4px 34px;box-shadow:5px 7px 0 #e3e8dc99}
+.wall-card:nth-child(3n+2){background:#fdf1f5;border-radius:34px 4px 34px 4px}
+.wall-card:nth-child(3n){background:#f4f6ee}
+.wall-text{font-family:var(--serif);font-size:21px;line-height:1.45;color:#3d493e;white-space:pre-line;overflow-wrap:anywhere}
+.wall-card footer{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 12px;margin-top:16px;padding-top:12px;border-top:1px solid #c4a66b66}
+.wall-card cite{font-family:var(--script);font-style:normal;font-size:25px;line-height:1.2;color:#80613e;overflow-wrap:anywhere}
+.wall-card time{font-size:10px;letter-spacing:.06em;color:#707469}
+
+/* La confirmación en su propia página. */
+.footer-rsvp{margin-top:26px}
+.replay-entry{display:flex;margin-left:auto;margin-right:auto}
+.confirm-page .rsvp{min-height:calc(100dvh - 300px);align-items:center}
+@media(min-width:1101px){.confirm-page .nav-rsvp{margin-left:auto}}
+.confirm-footer{padding-top:44px;padding-bottom:60px}
+.confirm-footer .text-link{display:inline-flex;margin-top:18px}
+@media(max-width:1000px){.wall-grid{columns:2}}
+@media(max-width:640px), (max-height:500px) and (pointer:coarse){
+ .message-wall{padding-top:52px}.wall-heading h2{font-size:40px}.wall-heading{margin-bottom:28px}
+ .wall-grid{column-gap:12px}.wall-card{margin-bottom:12px;padding:16px 14px 12px;border-radius:3px 22px 3px 22px;box-shadow:3px 4px 0 #e3e8dc99}
+ .wall-card:nth-child(3n+2){border-radius:22px 3px 22px 3px}
+ .wall-text{font-size:17px;line-height:1.4;text-align:left}.wall-card cite{font-size:21px}.wall-card time{font-size:9px}
+ .footer-rsvp{width:100%;max-width:320px}
+ .confirm-page .rsvp{min-height:0}.confirm-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
+}

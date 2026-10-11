@@ -39,14 +39,6 @@
 .arrival-heading .eyebrow{font-size:9px;letter-spacing:.22em;color:#988058}
 .arrival-heading>p:last-child{font-family:var(--serif);font-size:42px;margin-top:8px}
 .arrival-stage{position:absolute;inset:17% 4% 12%;display:grid;place-items:center;perspective:1200px}
-.palace-illustration{position:relative;width:min(960px,100%);aspect-ratio:1200/720;color:#aa946f;opacity:0}
-.palace-illustration>svg{width:100%;height:100%;filter:drop-shadow(0 16px 16px #93774b0b)}
-.palace-chamber{position:absolute;left:45%;top:54%;width:10%;height:22%;background:linear-gradient(90deg,#f7eac9,#a9bba2 48%,#f7eac9);overflow:hidden;border-radius:50% 50% 0 0;perspective:400px;box-shadow:0 0 24px #e5cf9480}
-.arrival-door{position:absolute;top:0;bottom:0;width:50%;background:#ebe2cd;border:1px solid #ac986f;transform-style:preserve-3d}
-.arrival-door::before{content:'';position:absolute;inset:16px 6px 7px;border:1px solid #bba47a;background:linear-gradient(120deg,#f4eddd,#e7dcc3)}
-.arrival-door::after{content:'';position:absolute;top:63%;width:3px;height:3px;border-radius:50%;background:#98784c}
-.door-left{left:0;transform-origin:left}.door-right{right:0;transform-origin:right}
-.door-left::after{right:4px}.door-right::after{left:4px}
 .arrival-envelope{position:absolute;width:min(420px,76vw);height:246px;opacity:0;perspective:900px;--letter-rise:-105px}
 .arrival-envelope-back{position:absolute;inset:0;background:#dadfcf;border:1px solid #afbaa0;border-radius:2px;box-shadow:0 26px 50px #53493617;z-index:0}
 .arrival-envelope-front{position:absolute;inset:0;clip-path:polygon(0 0,50% 57%,100% 0,100% 100%,0 100%);background:linear-gradient(33deg,#e5e9dc 49.8%,#cbd3bf 50%,#dce3d1 50.5%);z-index:3;border:1px solid #bac4ad}
@@ -67,9 +59,6 @@
 .arrival-caption{position:absolute;bottom:10%;left:8%;right:8%;text-align:center;font-family:var(--serif);font-style:italic;font-size:20px;color:#827457;z-index:7}
 .arrival-progress{position:absolute;bottom:5%;left:calc(50% - 52px);width:104px;height:1px;background:#b69d7140}
 .arrival-progress i{display:block;height:100%;background:#a48855;transform:scaleX(0);transform-origin:left}
-.arrival.is-playing .palace-illustration{animation:palaceArrival 10s ease both}
-.arrival.is-playing .door-left{animation:doorLeft 2.5s 1.7s ease-in-out both}
-.arrival.is-playing .door-right{animation:doorRight 2.5s 1.7s ease-in-out both}
 .arrival.is-playing .arrival-envelope{animation:envelopeArrival 10s ease both}
 .arrival.is-playing .arrival-wax{animation:waxLift .9s 4.6s ease both}
 .arrival.is-playing .arrival-envelope-flap{animation:flapOpen 1.5s 4.8s ease-in-out both,envelopeDissolve 1.2s 7.1s ease both}
@@ -79,7 +68,7 @@
 .arrival.is-playing .arrival-ink{animation:letterQuill 1.5s 6.2s linear both}
 .arrival.is-playing .arrival-progress i{animation:arrivalProgress 10s linear both}
 .arrival.is-leaving{animation:arrivalFade .65s ease both}
-.arrival.is-static .arrival-envelope{opacity:1}.arrival.is-static .arrival-paper{opacity:1;transform:translateY(var(--letter-rise))}.arrival.is-static .arrival-script{clip-path:none}.arrival.is-static .palace-illustration,.arrival.is-static .arrival-envelope-front,.arrival.is-static .arrival-envelope-back,.arrival.is-static .arrival-envelope-flap,.arrival.is-static .arrival-wax{display:none}
+.arrival.is-static .arrival-envelope{opacity:1}.arrival.is-static .arrival-paper{opacity:1;transform:translateY(var(--letter-rise))}.arrival.is-static .arrival-script{clip-path:none}.arrival.is-static .arrival-house,.arrival.is-static .arrival-envelope-front,.arrival.is-static .arrival-envelope-back,.arrival.is-static .arrival-envelope-flap,.arrival.is-static .arrival-wax{display:none}
 
 /* El jardín bordea la lectura; nunca ocupa los controles. */
 .garden-world{position:fixed;inset:0;pointer-events:none;z-index:5;overflow:hidden;contain:layout paint;opacity:0;transition:opacity 1.6s;--garden-flow:0;--bloom-scale:.65;--bloom-alpha:.5}
@@ -170,9 +159,6 @@
 @keyframes inkReveal{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
 @keyframes inkLine{from{stroke-dashoffset:380}to{stroke-dashoffset:0}}
 @keyframes quillWrite{0%{opacity:0;left:0}8%{opacity:.8}90%{opacity:.8}100%{opacity:0;left:92%}}
-@keyframes palaceArrival{0%{opacity:0;transform:translateY(15px) scale(.97)}12%,34%{opacity:1;transform:translateY(0) scale(1)}53%,100%{opacity:0;transform:scale(1.16)}}
-@keyframes doorLeft{to{transform:rotateY(-108deg)}}
-@keyframes doorRight{to{transform:rotateY(108deg)}}
 @keyframes envelopeArrival{0%,34%{opacity:0;transform:translateY(40px) scale(.86)}44%,90%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-15px) scale(1.04)}}
 @keyframes waxLift{to{transform:rotate(-13deg) translateY(28px) scale(.85);opacity:0}}
 @keyframes flapOpen{0%{transform:rotateX(0);z-index:4}50%{z-index:4}100%{transform:rotateX(175deg);z-index:0}}
@@ -192,12 +178,12 @@
 @media(max-width:850px){.hero-name{font-size:28px}.hero-subtitle{font-size:39px}.hero-ink-trace{height:20px}.garden-column{display:none}.portrait-frame{padding:26px}.portrait-placeholder{inset:26px}.gallery-intro{width:285px}.countdown-petals{right:4%;width:65px;height:52px}}
 @media(max-width:640px), (max-height:500px) and (pointer:coarse){
  .hero h1{font-size:62px;line-height:.94;margin:0 0 9px;max-width:100%}.hero h1 em{font-size:1.12em}.hero-subtitle{font-size:36px;margin:0 0 7px;grid-column:1;grid-row:3}.hero-ink-trace{display:none}.hero-copy .hero-name{grid-row:4;font-size:28px;margin:0 0 20px}.hero-figure{grid-row:5}.hero-copy .hero-intro{grid-row:6}.hero-copy .hero-meta{grid-row:7}.hero-copy .button{grid-row:8}.hero-copy .personal-greeting{grid-row:9}
- .arrival-skip{top:14px;right:17px;font-size:10px;padding:5px 10px}.arrival-heading{top:10%;left:7%;right:7%}.arrival-heading .eyebrow{font-size:7px;letter-spacing:.18em}.arrival-heading>p:last-child{font-size:35px;margin-top:5px}.arrival-stage{inset:23% -10% 17%}.palace-illustration{width:130%;max-width:none}.arrival-envelope{width:285px;height:178px;--letter-rise:-58px}.arrival-paper{height:241px;padding:24px 11px;bottom:11px}.arrival-paper::before{inset:8px}.arrival-script{font-size:35px;margin-top:21px}.arrival-signature{font-size:27px}.arrival-paper-rule{margin:19px auto 12px}.arrival-wax{width:56px;height:56px;left:calc(50% - 28px);top:calc(52% - 28px)}.arrival-wax>span{font-size:24px}.arrival-wax::after{inset:9px}.arrival-ink{top:78px;width:22px;height:22px}.arrival-caption{font-size:17px;left:9%;right:9%;bottom:10%;line-height:1.4}.arrival-progress{bottom:6%}
+ .arrival-skip{top:14px;right:17px;font-size:10px;padding:5px 10px}.arrival-heading{top:10%;left:7%;right:7%}.arrival-heading .eyebrow{font-size:7px;letter-spacing:.18em}.arrival-heading>p:last-child{font-size:35px;margin-top:5px}.arrival-stage{inset:23% -10% 17%}.arrival-envelope{width:285px;height:178px;--letter-rise:-58px}.arrival-paper{height:241px;padding:24px 11px;bottom:11px}.arrival-paper::before{inset:8px}.arrival-script{font-size:35px;margin-top:21px}.arrival-signature{font-size:27px}.arrival-paper-rule{margin:19px auto 12px}.arrival-wax{width:56px;height:56px;left:calc(50% - 28px);top:calc(52% - 28px)}.arrival-wax>span{font-size:24px}.arrival-wax::after{inset:9px}.arrival-ink{top:78px;width:22px;height:22px}.arrival-caption{font-size:17px;left:9%;right:9%;bottom:10%;line-height:1.4}.arrival-progress{bottom:6%}
  .garden-branch{width:83px;height:430px;opacity:.19}.branch-left{left:-58px;bottom:-65px}.branch-right{right:-53px;top:14%}.garden-petals i{width:6px;height:10px}.garden-petals i:first-child{left:4%}.garden-petals i:last-child{right:3%}.garden-butterfly{width:23px;height:19px}
  .story{gap:35px}.portrait-figure{width:calc(100% - 18px);max-width:350px}.portrait-frame{padding:25px}.portrait-placeholder{inset:25px}.portrait-placeholder>span{font-size:84px}.portrait-placeholder>small{font-size:7px}.story-age{right:-27px;bottom:14px}.story-age>span{font-size:85px}.story-age small{font-size:6px}.story-signature{font-size:32px}.countdown-petals{top:12px;right:5px;width:43px;height:36px;opacity:.4}
  .gallery-intro{display:block;width:auto}.gallery-intro>p{max-width:none}.gallery-help{margin-top:9px;font-size:9px}.gallery-controls{justify-content:flex-end;margin-top:16px;gap:13px}.gallery-controls>span{display:block;letter-spacing:.03em}.gallery-controls button{min-height:41px;min-width:44px;padding:6px 10px}.gallery-controls button span{display:inline;font-size:8px}
  .message-book-heading .petal-emblem{position:absolute;right:9px;bottom:6px;width:45px;height:35px}.letter-petals{width:43px;height:34px}.footer-farewell{font-size:32px;margin:8px 15px 0;line-height:1.4}.footer-petals i{width:7px;height:12px}.replay-entry{font-size:8px;margin-top:18px}
 }
-@media(max-height:550px) and (min-width:641px){.arrival-heading{top:5%}.arrival-heading>p:last-child{font-size:29px}.arrival-stage{inset:16% 12% 15%}.palace-illustration{width:640px}.arrival-envelope{transform:scale(.8);width:320px;height:180px;--letter-rise:-40px}.arrival-paper{height:232px;padding:19px}.arrival-script{font-size:35px}.arrival-caption{font-size:16px;bottom:6%}.arrival-progress{bottom:3%}}
+@media(max-height:550px) and (min-width:641px){.arrival-heading{top:5%}.arrival-heading>p:last-child{font-size:29px}.arrival-stage{inset:16% 12% 15%}.arrival-envelope{transform:scale(.8);width:320px;height:180px;--letter-rise:-40px}.arrival-paper{height:232px;padding:19px}.arrival-script{font-size:35px}.arrival-caption{font-size:16px;bottom:6%}.arrival-progress{bottom:3%}}
 @media(max-width:640px), (max-height:500px) and (pointer:coarse){.hero-ink-trace{display:block;grid-column:1;grid-row:3;width:235px;height:15px;margin:-4px 0 0}.hero-ink-trace>svg:first-child{height:15px}.writing-quill{width:23px;height:23px;top:-14px}.hero-subtitle{grid-row:4}.hero-copy .hero-name{grid-row:5}.hero-figure{grid-row:6}.hero-copy .hero-intro{grid-row:7}.hero-copy .hero-meta{grid-row:8}.hero-copy .button{grid-row:9}.hero-copy .personal-greeting{grid-row:10}}
 @media(prefers-reduced-motion:reduce){.garden-world,.footer-petals,.writing-quill,.arrival-ink{display:none!important}.ink-write>span,.ink-write>em,.arrival-script{clip-path:none!important;animation:none!important}.hero-ink-trace path{stroke-dashoffset:0!important;animation:none!important}.portrait-figure,.gallery-photo{transition:none}.acceptance-seal.is-stamped{animation:none;transform:rotate(-12deg)}.arrival.is-playing *{animation-duration:.001ms!important;animation-delay:0ms!important}.footer-farewell{animation:none!important}}

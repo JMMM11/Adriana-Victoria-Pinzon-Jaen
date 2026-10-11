@@ -10,21 +10,20 @@ window.EVENTO_BASE = {
   "zonaHoraria": "America/Panama",
   "fechaTexto": "14 de noviembre de 2026",
   "horaTexto": "8:00 p. m. — 3:00 a. m.",
-  "fraseIntro": "Las puertas del salón se abrirán para celebrar una noche de valses, música y recuerdos inolvidables. Será un honor compartir esta velada contigo.",
   "carta": "Querido y distinguido invitado:\n\nEsta temporada, hay una celebración de la que toda la sociedad hablará. Con el corazón lleno de ilusión, te invito a mi gran noche: una velada para bailar, reír y escribir juntos el comienzo de un nuevo capítulo.\n\nTu presencia hará que esta velada sea verdaderamente inolvidable.",
   "historia": "Hay momentos que merecen su propio capítulo. Quince años de sueños, de risas y de personas que han hecho mi mundo más bonito. Ahora comienza una nueva temporada… y quiero vivirla contigo.",
-  "gaceta": "Dearest Gentle Reader… Esta temporada, la sociedad tiene una cita muy especial: los quince años de Adriana Victoria Pinzón Jaén. Entre valses, jardines y luces de salón, una nueva historia está por comenzar. Tu presencia será parte de sus páginas más queridas.",
+  "gaceta": "Dearest Gentle Reader… Esta temporada, la sociedad tiene una cita muy especial: los quince años de Adriana Victoria Pinzón Jaén. Entre bailes, jardines y luces de salón, una nueva historia está por comenzar. Tu presencia será parte de sus páginas más queridas.",
   "imagenes": {
-    "portada": "assets/salon-regency.png",
+    "portada": "assets/salon-regency.jpg",
     "portadaAlt": "Salón Regency iluminado por velas, con glicinas y una araña de cristal",
     "portadaPosicion": "50% 50%",
-    "historia": "assets/detalles-del-baile.png",
+    "historia": "assets/detalles-del-baile.jpg",
     "historiaAlt": "Un vestido azul, una tiara y cartas selladas sobre un tocador Regency",
     "historiaPosicion": "50% 50%",
-    "lugar": "assets/salon-regency.png",
+    "lugar": "assets/salon-regency.jpg",
     "lugarAlt": "Un escenario de inspiración Bridgerton para imaginar la noche de gala",
     "lugarPosicion": "50% 45%",
-    "vestimenta": "assets/detalles-del-baile.png",
+    "vestimenta": "assets/detalles-del-baile.jpg",
     "vestimentaAlt": "Detalles de moda de una noche de baile",
     "vestimentaPosicion": "25% 50%",
     "monograma": ""
@@ -43,22 +42,22 @@ window.EVENTO_BASE = {
     "segundos": 5,
     "fotos": [
       {
-        "archivo": "assets/jardin-glicinas.png",
+        "archivo": "assets/jardin-glicinas.jpg",
         "alt": "Un jardín Regency con glicinas y un pabellón iluminado al atardecer",
         "posicion": "50% 50%"
       },
       {
-        "archivo": "assets/escalera-del-debut.png",
+        "archivo": "assets/escalera-del-debut.jpg",
         "alt": "Una gran escalera de gala iluminada por velas y una araña de cristal",
         "posicion": "50% 50%"
       },
       {
-        "archivo": "assets/te-de-la-temporada.png",
+        "archivo": "assets/te-de-la-temporada.jpg",
         "alt": "Una mesa de té con porcelana azul y una invitación sellada junto a la ventana",
         "posicion": "50% 50%"
       },
       {
-        "archivo": "assets/detalles-del-baile.png",
+        "archivo": "assets/detalles-del-baile.jpg",
         "alt": "Un vestido azul, una tiara y guantes preparados para el baile",
         "posicion": "35% 50%"
       }
@@ -66,61 +65,17 @@ window.EVENTO_BASE = {
   },
   "lugar": {
     "nombre": "Summit Rainforest & Golf Resort",
-    "salon": "",
+    "salon": "Salón El Gran Corotú",
     "direccion": "Panamá",
     "googleMaps": "https://www.google.com/maps/search/?api=1&query=Summit%20Rainforest%20%26%20Golf%20Resort",
     "waze": "https://waze.com/ul?q=Summit%20Rainforest%20%26%20Golf%20Resort&navigate=yes",
     "mapaConsulta": "Summit Rainforest & Golf Resort Panama",
     "notaImagen": "El espíritu del baile · Imagen de ambientación"
   },
-  "itinerario": [
-    {
-      "hora": "8:00 p. m.",
-      "titulo": "Recepción de invitados",
-      "detalle": "Las puertas se abren para ti.",
-      "id": "recepcion",
-      "imagen": ""
-    },
-    {
-      "hora": "9:00 p. m.",
-      "titulo": "Bienvenida",
-      "detalle": "Un brindis por esta gran noche.",
-      "id": "bienvenida",
-      "imagen": ""
-    },
-    {
-      "hora": "10:00 p. m.",
-      "titulo": "Presentación oficial",
-      "detalle": "El vals de Adriana Victoria.",
-      "id": "presentacion",
-      "imagen": ""
-    },
-    {
-      "hora": "11:00 p. m.",
-      "titulo": "Evento principal",
-      "detalle": "La protagonista de esta temporada.",
-      "id": "principal",
-      "imagen": ""
-    },
-    {
-      "hora": "12:00 a. m.",
-      "titulo": "Cena",
-      "detalle": "Compartimos la mesa y los recuerdos.",
-      "id": "cena",
-      "imagen": ""
-    },
-    {
-      "hora": "1:00 a. m.",
-      "titulo": "Fiesta",
-      "detalle": "Música y baile hasta las 3:00 a. m.",
-      "id": "fiesta",
-      "imagen": ""
-    }
-  ],
   "vestimenta": {
-    "titulo": "Semi-formal",
-    "damas": "Un toque de elegancia",
-    "caballeros": "Un toque de elegancia",
+    "titulo": "Vestimenta formal",
+    "damas": "Vestido largo",
+    "caballeros": "Saco y corbata",
     "nota": "Los colores rosado y azul están reservados para Adriana. Te agradecemos evitar estos colores en tu vestimenta."
   },
   "regalos": {
@@ -133,18 +88,37 @@ window.EVENTO_BASE = {
   },
   "fotos": [
     {
-      "archivo": "assets/detalles-del-baile.png",
+      "archivo": "assets/detalles-del-baile.jpg",
       "texto": "Los detalles de una noche soñada",
       "alt": "Tiara, guantes de seda y una invitación sellada",
       "posicion": "50% 50%"
     },
     {
-      "archivo": "assets/salon-regency.png",
+      "archivo": "assets/salon-regency.jpg",
       "texto": "Donde comienza la magia",
       "alt": "Salón Regency con luz de velas",
       "posicion": "50% 50%"
+    },
+    {
+      "archivo": "assets/jardin-glicinas.jpg",
+      "texto": "Un jardín en flor",
+      "alt": "Un jardín Regency con glicinas al atardecer",
+      "posicion": "50% 50%"
+    },
+    {
+      "archivo": "assets/escalera-del-debut.jpg",
+      "texto": "La escalera del debut",
+      "alt": "Una gran escalera de gala iluminada por velas",
+      "posicion": "50% 50%"
+    },
+    {
+      "archivo": "assets/te-de-la-temporada.jpg",
+      "texto": "El té de la temporada",
+      "alt": "Una mesa de té con porcelana azul junto a la ventana",
+      "posicion": "50% 50%"
     }
   ],
+  "espaciosAlbum": 0,
   "musica": {
     "archivo": "Audio.mp3",
     "youtube": "",
@@ -173,7 +147,7 @@ window.EVENTO_BASE = {
     "temporada": "La temporada social · 2026",
     "tema": "Una velada en el universo de Bridgerton",
     "navInvitacion": "La invitación",
-    "navVelada": "La velada",
+    "navCelebracion": "La celebración",
     "navDetalles": "Los detalles",
     "navRsvp": "Confirmar asistencia",
     "heroEtiqueta": "MIS XV AÑOS · LA GRAN NOCHE",
@@ -202,26 +176,22 @@ window.EVENTO_BASE = {
     "gacetaSaludo": "Querido lector…",
     "gacetaTitulo": "Adriana Victoria,\nel diamante de la temporada.",
     "gacetaFirma": "Una crónica al estilo de Lady Whistledown",
-    "cartaEtiqueta": "01 / LA INVITACIÓN",
-    "cartaTitulo": "Esta noche,\ntú eres parte.",
     "cartaAbrir": "Leer la invitación",
     "cartaCerrar": "Guardar la carta",
     "cartaSello": "Una invitación muy especial",
     "cartaFirma": "Con todo mi cariño,",
-    "historiaEtiqueta": "02 / UN NUEVO CAPÍTULO",
+    "historiaEtiqueta": "UN NUEVO CAPÍTULO",
     "historiaTitulo": "Quince primaveras.\nInfinitas posibilidades.",
     "historiaCita": "Que esta noche sea el comienzo\nde algo maravilloso.",
-    "veladaEtiqueta": "03 / LA VELADA",
-    "veladaTitulo": "El orden\ndel baile.",
-    "veladaSubtitulo": "Una crónica de nuestra gran noche.",
-    "lugarEtiqueta": "04 / EL ESCENARIO",
+    "lugarEtiqueta": "EL ESCENARIO",
     "lugarTitulo": "El encuentro\nde la temporada.",
     "mapa": "Ver el mapa",
     "maps": "Google Maps",
     "waze": "Llegar con Waze",
-    "detallesEtiqueta": "05 / LOS PEQUEÑOS DETALLES",
+    "detallesEtiqueta": "LOS PEQUEÑOS DETALLES",
     "vestimentaTitulo": "Vestirse para\nla ocasión.",
-    "vestimentaIntro": "Un toque de elegancia para una noche extraordinaria.",
+    "vestimentaIntro": "Una noche de gala merece su mejor atuendo.",
+    "vestimentaPie": "Vestidos largos, saco y corbata",
     "damas": "Damas",
     "caballeros": "Caballeros",
     "regalosTitulo": "El más bonito\nde los regalos.",
@@ -230,12 +200,15 @@ window.EVENTO_BASE = {
     "galeriaEtiqueta": "EL ÁLBUM DE LA TEMPORADA",
     "galeriaTitulo": "Instantes para\natesorar.",
     "galeriaSubtitulo": "Un pequeño vistazo al mundo de esta celebración.",
-    "rsvpEtiqueta": "06 / TU RESPUESTA",
+    "galeriaReservado": "Un recuerdo por llegar",
+    "rsvpEtiqueta": "TU RESPUESTA",
     "whatsappBoton": "Enviar por WhatsApp",
     "whatsappNota": "WhatsApp abrirá el mensaje. Pulsa Enviar allí para hacer llegar tu respuesta.",
-    "muroEtiqueta": "EL LIBRO PRIVADO DE LOS BUENOS DESEOS",
+    "muroEtiqueta": "EL LIBRO DE LOS BUENOS DESEOS",
     "muroTitulo": "Palabras para\nAdriana",
     "muroVacio": "Un deseo, un recuerdo, unas palabras que siempre pueda volver a leer.",
+    "muroLibro": "Lo que la sociedad\nle ha escrito.",
+    "volverInvitacion": "Volver a la invitación",
     "despedida": "La temporada apenas comienza.",
     "gracias": "Gracias por ser parte de este momento.",
     "footerTema": "LOS XV DE ADRIANA · EN EL UNIVERSO DE BRIDGERTON",
@@ -260,9 +233,14 @@ window.EVENTO_BASE = {
 // Esta invitación es única. Ignora configuraciones de antiguas vistas locales.
 window.PUBLIC_MODE = true;
 window.EVENTO_BASE.rsvp.whatsapp = window.CONFIGURACION_ADRIANA?.whatsapp || '';
-window.EVENTO_BASE.itinerario.forEach(momento => {
-  momento.imagen = window.CONFIGURACION_ADRIANA?.imagenesBaile?.[momento.id] || momento.imagen;
-});
+window.EVENTO_BASE.retrato.archivo = String(window.CONFIGURACION_ADRIANA?.fotoAdriana || '').trim();
+// Fotos del álbum: las que ya tienen archivo van primero; las vacías quedan como espacios reservados.
+(() => {
+  const album = Array.isArray(window.CONFIGURACION_ADRIANA?.fotosAlbum) ? window.CONFIGURACION_ADRIANA.fotosAlbum : [];
+  const propias = album.filter(foto => String(foto?.archivo || '').trim()).map(foto => ({ archivo: String(foto.archivo).trim(), texto: String(foto.texto || ''), alt: String(foto.texto || 'Fotografía de Adriana Victoria'), posicion: foto.posicion || '50% 50%' }));
+  window.EVENTO_BASE.fotos = [...propias, ...window.EVENTO_BASE.fotos];
+  window.EVENTO_BASE.espaciosAlbum = album.length - propias.length;
+})();
 window.InvitationData = (() => {
   const clone = value => JSON.parse(JSON.stringify(value));
   function safeURL(value, media = false) {

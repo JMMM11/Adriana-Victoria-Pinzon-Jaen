@@ -1,0 +1,1 @@
+Guarda aqui las fotos de Adriana y escribe su ruta en configuracion.js.

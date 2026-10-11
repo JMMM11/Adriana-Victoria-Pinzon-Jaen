@@ -1,22 +1,23 @@
 /* Configuración de la anfitriona. No crea opciones de edición en la página. */
 window.CONFIGURACION_ADRIANA = {
-  // Añade el número completo cuando lo tengas: '507XXXXXXXX'.
-  // '+507' por sí solo no se utiliza como destino.
-  whatsapp: '',
-  // Imágenes del orden del baile: ruta local o enlace https.
-  // Ejemplo: recepcion: 'assets/baile/recepcion.png'
-  // Admite PNG, JPG, WebP y SVG. Vacío = solo la hora y el texto.
-  imagenesBaile: {
-    recepcion: '',
-    bienvenida: '',
-    presentacion: '',
-    principal: '',
-    cena: '',
-    fiesta: ''
-  },
+  // Número completo, solo dígitos: código de país y número.
+  whatsapp: '50760028971',
+  // Foto de la quinceañera. Guarda la imagen en assets/fotos/ y escribe aquí su ruta.
+  // Ejemplo: fotoAdriana: 'assets/fotos/adriana.jpg'
+  // Vacío = el marco muestra el monograma AV.
+  fotoAdriana: '',
+  // Fotos del álbum "Instantes para atesorar". Cada línea es un espacio.
+  // Completa archivo (y texto, si quieres un pie de foto) cuando tengas la imagen.
+  // Ejemplo: { archivo: 'assets/fotos/sesion-1.jpg', texto: 'Una tarde en el jardín' }
+  // Puedes añadir o quitar líneas. Un espacio vacío se muestra como "Un recuerdo por llegar".
+  fotosAlbum: [
+    { archivo: '', texto: '' },
+    { archivo: '', texto: '' },
+    { archivo: '', texto: '' },
+    { archivo: '', texto: '' }
+  ],
   supabase: {
-    // Después de ejecutar supabase/adriana.sql, pega estos dos valores.
-    url: '', // https://TU-PROYECTO.supabase.co
-    clavePublica: '' // sb_publishable_... (o la clave anon antigua)
+    url: 'https://vavvvztvuttndlrnfeqf.supabase.co',
+    clavePublica: 'sb_publishable_R3365D0NkMjMlcwcP7x1zw_Kw0_Ws_f'
   }
 };

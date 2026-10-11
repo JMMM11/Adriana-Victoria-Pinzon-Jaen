@@ -1,4 +1,4 @@
-/* Envíos privados a Supabase. Nunca consulta los mensajes de otros invitados. */
+/* Envíos a Supabase y lectura del libro de mensajes. Las confirmaciones nunca se consultan. */
 window.AdrianaServicios = (() => {
   'use strict';
   const EVENTO = 'adriana-victoria-2026';
@@ -47,5 +47,17 @@ window.AdrianaServicios = (() => {
     payload.cancion ||= null; payload.mensaje ||= null;
     return insert('confirmaciones_adriana', payload);
   }
-  return { available, message, attendance };
+  async function messages() {
+    if (!available()) return [];
+    const c = configuration(), controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 15000);
+    try {
+      const headers = { apikey:c.key };
+      if (!c.key.startsWith('sb_publishable_')) headers.Authorization = `Bearer ${c.key}`;
+      const response = await fetch(`${c.url}/rest/v1/mensajes_adriana?select=nombre,mensaje,creado&order=creado.desc&limit=150`, {headers,signal:controller.signal});
+      if (!response.ok) throw new Error('read-failed');
+      return await response.json();
+    } finally { clearTimeout(timer); }
+  }
+  return { available, message, attendance, messages };
 })();
