@@ -3,3 +3,7 @@ servidor.mjs
 publicar.mjs
 supabase
 sitio-adriana
+.agents
+.claude
+.mcp.json
+skills-lock.json
