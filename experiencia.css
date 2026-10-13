@@ -235,8 +235,9 @@
   .arrival-heading{top:10%;left:7%;right:7%}
   .arrival-heading .eyebrow{font-size:7px;letter-spacing:.18em}
   .arrival-heading>p:last-child{font-size:35px;margin-top:5px}
-  .arrival-stage{inset:23% -10% 17%}
-  .arrival-envelope{width:285px;height:178px;--letter-rise:-58px}
+  /* El sobre empieza debajo del nombre, para que la carta no lo tape al salir. */
+  .arrival-stage{inset:calc(190px + env(safe-area-inset-top)) -10% 17%}
+  .arrival-envelope{top:max(127px,calc(50% - 89px));width:285px;height:178px;--letter-rise:-30px}
   .arrival-paper{height:241px;padding:24px 11px;bottom:11px}
   .arrival-paper::before{inset:8px}
   .arrival-script{font-size:35px;margin-top:21px}
