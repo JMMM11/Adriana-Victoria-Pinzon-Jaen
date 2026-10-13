@@ -499,7 +499,16 @@
   .wall-grid{column-gap:12px}
   .wall-card{margin-bottom:12px;padding:16px 14px 12px;border-radius:3px 22px 3px 22px;box-shadow:3px 4px 0 #e3e8dc99}
   .wall-card:nth-child(3n+2){border-radius:22px 3px 22px 3px}
-  .wall-text{font-size:17px;line-height:1.4;text-align:left}
+  .wall-text{font-size:17px;line-height:1.4;text-align:center}
+  /* En el teléfono los títulos de cada sección van centrados, igual que sus textos. */
+  .venue-copy,.gallery-header,.message-book-heading,.rsvp-intro{text-align:center}
+  .venue-links,.reserved-seats{justify-content:center}
+  .venue-address{flex-direction:column;align-items:center}
+  .venue-links{margin-top:22px}
+  .gallery-intro>p,.message-privacy,.rsvp-intro .section-description{text-align-last:center}
+  .message-invitation,.message-privacy{margin-left:auto;margin-right:auto}
+  .message-book-heading h2{padding-right:0}
+  .message-bee{position:static;margin:0 auto 14px}
   .wall-card cite{font-size:21px}
   .wall-card time{font-size:9px}
 }
