@@ -79,7 +79,7 @@ window.EVENTO_BASE = {
       'https://www.google.com/maps/search/?api=1&query=Summit%20Rainforest%20%26%20Golf%20Resort',
     waze: 'https://waze.com/ul?q=Summit%20Rainforest%20%26%20Golf%20Resort&navigate=yes',
     mapaConsulta: 'Summit Rainforest & Golf Resort Panama',
-    notaImagen: 'El espíritu del baile · Imagen de ambientación',
+    notaImagen: 'El espíritu del baile',
   },
 
   // ===== Vestimenta =====
