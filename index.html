@@ -29,6 +29,7 @@
 
   <!-- Iconos y flores del jardín: se dibujan una vez aquí y se reutilizan con <use> -->
   <svg class="symbol-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="i-ornament" viewBox="0 0 150 32"><path pathLength="1" d="M8 17h34c11 0 20-10 14-15-5-4-12 2-8 6 3 3 7-1 5-3M142 17h-34c-11 0-20-10-14-15 5-4 12 2 8 6-3 3-7-1-5-3M35 17c10 0 19 14 27 10 5-3 1-10-3-7M115 17c-10 0-19 14-27 10-5-3-1-10 3-7M66 17l9-9 9 9-9 9-9-9ZM75 2v3m0 24v1"/><circle pathLength="1" cx="6" cy="17" r="2"/><circle pathLength="1" cx="144" cy="17" r="2"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-5-5 5 5-5 5"/></symbol>
     <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 4v15m-5-5 5 5 5-5"/></symbol>
     <symbol id="i-diamond" viewBox="0 0 30 24"><path d="m3 8 6-6h12l6 6-12 14L3 8Zm0 0h24M9 2l6 20L21 2M9 2l-2 6m14-6 2 6"/></symbol>
@@ -155,7 +156,7 @@
         <img class="celebration-candle candle-right" src="assets/decoracion/candelabro.svg" alt="" loading="lazy" width="520" height="433">
         <p class="eyebrow">Una cita en el salón El Gran Corotú</p>
         <h2 id="celebrationTitle">La celebración</h2>
-        <span class="ornamental-divider" aria-hidden="true">❦</span>
+        <svg class="ornamental-divider ornament-draw" aria-hidden="true"><use href="#i-ornament"/></svg>
         <p class="celebration-honoree">Los XV de Adriana Victoria</p>
       </div>
     </section>
@@ -187,7 +188,13 @@
     <!-- ===== Regalos: lluvia de sobres ===== -->
     <section class="gifts section-pad" id="regalos" aria-labelledby="giftsTitle">
       <div class="gift-copy reveal">
-        <svg class="gift-art" viewBox="0 0 160 124" aria-hidden="true"><path class="envelope-body" d="M14 30h132v78a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4Z"/><path class="envelope-fold" d="M15 111 62 66m83 45L98 66"/><path class="envelope-flap" d="M14 30 80 80l66-50Z"/><circle class="envelope-seal" cx="80" cy="78" r="10"/></svg>
+        <!-- El sobre se abre, asoma un billete y se vuelve a guardar. De atrás hacia delante: solapa abierta, billete, sobre y solapa cerrada. -->
+        <svg class="gift-art" viewBox="0 -24 160 148" aria-hidden="true">
+          <path class="envelope-flap envelope-flap-open" d="M14 30 80-20l66 50Z"/>
+          <g class="envelope-bill"><use href="#billete" transform="rotate(-7 80 104)"/><use href="#billete" transform="rotate(7 80 104)"/><g id="billete"><rect class="bill-paper" x="32" y="54" width="96" height="50" rx="3"/><rect class="bill-line" x="37" y="59" width="86" height="40" rx="1.5"/><circle class="bill-line" cx="80" cy="79" r="12"/><text class="bill-sign" x="80" y="86" text-anchor="middle">$</text></g></g>
+          <path class="envelope-body" d="M14 30h132v78a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4Z"/><path class="envelope-fold" d="M15 111 62 66m83 45L98 66"/>
+          <g class="envelope-flap-closed"><path class="envelope-flap" d="M14 30 80 80l66-50Z"/><circle class="envelope-seal" cx="80" cy="78" r="10"/></g>
+        </svg>
         <h2 id="giftsTitle" data-text="regalosTitulo"></h2>
         <p class="gift-envelopes" id="giftEnvelopes" data-text="regalosSobres"></p>
         <div id="bankDetails" hidden></div>
@@ -218,7 +225,7 @@
         <p class="message-privacy">Tus palabras aparecerán en el libro, a la vista de los invitados.</p>
       </div>
       <div class="private-letter reveal">
-        <div class="letter-ornament" aria-hidden="true">❦</div>
+        <svg class="letter-ornament ornament-draw" aria-hidden="true"><use href="#i-ornament"/></svg>
         <form id="privateMessageForm" novalidate>
           <div class="field"><label for="messageText">Déjale unas palabras a Adriana</label><textarea id="messageText" name="mensaje" rows="5" maxlength="2000" placeholder="Escribe tu mensaje…" required aria-describedby="messageTextError"></textarea><p class="field-error" id="messageTextError" hidden>Escribe un mensaje de al menos 2 caracteres.</p></div>
           <div class="field"><label for="messageName">Tu nombre</label><input id="messageName" name="nombre" autocomplete="name" maxlength="120" placeholder="Con cariño, de…" required aria-describedby="messageNameError"><p class="field-error" id="messageNameError" hidden>Escribe tu nombre (al menos 2 caracteres).</p></div>

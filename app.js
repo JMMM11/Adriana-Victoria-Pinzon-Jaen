@@ -514,11 +514,14 @@
       const entry = { nombre: name, mensaje: text, creado: new Date().toISOString() };
       wallEntries.unshift(entry);
       wallShown += 1;
-      $('#messageWall').prepend(messageCard(entry));
+      const card = messageCard(entry);
+      card.classList.add('is-new');
+      $('#messageWall').prepend(card);
       showWall();
-      $('#messageSuccess').scrollIntoView({
+      // Baja hasta la carta nueva; el aviso de éxito queda visible justo encima.
+      card.scrollIntoView({
         behavior: reduced ? 'instant' : 'smooth',
-        block: 'center',
+        block: 'end',
       });
     } catch {
       error.textContent =

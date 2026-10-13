@@ -99,9 +99,10 @@
 .ornamental-divider,.letter-ornament{font-size:0;width:126px;height:27px;margin-left:auto;margin-right:auto;background:url('assets/ornamento.svg') center/contain no-repeat}
 
 /* La celebración */
-.celebration-frame::before,.celebration-frame::after{font-size:0;content:'';width:99px;height:24px;background:#eeeade url('assets/ornamento.svg') center/83px 19px no-repeat;padding:0}
-.celebration-frame::before{top:-12px}
-.celebration-frame::after{bottom:-12px}
+/* El adorno corta las líneas del marco con un fondo que se difumina, para que no se note un recuadro. */
+.celebration-frame::before,.celebration-frame::after{font-size:0;content:'';width:150px;height:44px;background:#ecede1 url('assets/ornamento.svg') center/83px 19px no-repeat;padding:0;-webkit-mask:radial-gradient(closest-side,#000 70%,transparent);mask:radial-gradient(closest-side,#000 70%,transparent)}
+.celebration-frame::before{top:-22px}
+.celebration-frame::after{bottom:-22px;background-color:#f0eae3}
 
 /* Libro de mensajes: formulario */
 .private-letter::before,.private-letter::after{font-size:0;content:'';width:60px;height:19px;background:url('assets/ornamento.svg') center/contain no-repeat;opacity:.8}
@@ -426,6 +427,32 @@
 .envelope-flap{fill:#f8d7e7;stroke:#3d493e;stroke-width:1.4;stroke-linejoin:round}
 .envelope-fold{fill:none;stroke:#3d493e;stroke-width:1.2;stroke-linecap:round}
 .envelope-seal{fill:#c9a968;stroke:#8f7140;stroke-width:1.4}
+/* Animación del sobre: la solapa se abre, el billete asoma y se vuelve a guardar. */
+.envelope-flap-open{fill:#f3c6da}
+.bill-paper{fill:#bcd3a8;stroke:#3d493e;stroke-width:1.4}
+.bill-line{fill:none;stroke:#5f7a55;stroke-width:1}
+.bill-sign{font-family:var(--serif);font-size:20px;font-weight:600;fill:#3d5145}
+.envelope-flap-open,.envelope-flap-closed,.envelope-bill{transform-box:fill-box;animation:7s ease-in-out infinite}
+.envelope-flap-closed{transform-origin:50% 0;animation-name:flapClosed}
+.envelope-flap-open{transform-origin:50% 100%;animation-name:flapOpened}
+.envelope-bill{animation-name:billPeek}
+@keyframes flapClosed{0%,10%,96%,100%{transform:scaleY(1)}18%,88%{transform:scaleY(0)}}
+@keyframes flapOpened{0%,18%,88%,100%{transform:scaleY(0)}26%,80%{transform:scaleY(1)}}
+@keyframes billPeek{0%,26%,78%,100%{transform:translateY(0)}42%,62%{transform:translateY(-64px)}}
+/* El sobre espera a que su sección aparezca para empezar. */
+.js-motion .gift-copy:not(.visible) .gift-art *{animation-play-state:paused}
+
+/* Adornos que se trazan como a pluma cuando aparece su sección. */
+.ornament-draw{display:block;background:none;fill:none;stroke:#ae8b50;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;transition:stroke-dashoffset 1.6s ease-in-out .35s}
+.js-motion .reveal:not(.visible) .ornament-draw{stroke-dashoffset:1;transition:none}
+
+/* La carta recién enviada cae sobre el libro. */
+.wall-card.is-new{scroll-margin-bottom:70px;animation:cardArrive .9s cubic-bezier(.2,.8,.3,1) .5s both}
+@keyframes cardArrive{from{opacity:0;transform:translateY(-46px) rotate(-4deg)}}
+
+/* La abeja llega volando y se posa junto al título del libro. */
+.js-motion .message-book-heading.visible .message-bee{animation:beeLand 1.7s ease-out .3s both}
+@keyframes beeLand{0%{opacity:0;transform:translate(70px,-46px) rotate(-18deg)}35%{opacity:1;transform:translate(28px,6px) rotate(24deg)}70%{transform:translate(-8px,-8px) rotate(2deg)}100%{transform:rotate(12deg)}}
 
 /* La carta: frase de entrada, nombre en mayúsculas y nombres resaltados. */
 .letter-lead{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.3;color:#6b705d;margin-top:14px}
@@ -454,6 +481,7 @@
   .gazette-column p,.story-copy .section-description,.dress-copy .section-description{text-align-last:center}
   .gift-art{width:118px}
   .celebration-honoree{font-size:30px;white-space:nowrap}
+  .celebration-frame::after{background-color:#f1e6e4}
   /* Vestimenta */
   .dress-copy{text-align:center}
   .dress-code{font-size:34px}
