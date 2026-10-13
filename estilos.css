@@ -53,8 +53,6 @@ h3{font-size:38px;white-space:pre-line}
 .nav-links a{position:relative;padding:10px 0}
 .nav-links a::after{content:'';position:absolute;bottom:4px;left:0;width:100%;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .nav-links a:hover::after{transform:scaleX(1)}
-.nav-rsvp{margin-left:12px;display:flex;gap:23px;align-items:center;border:1px solid #9aabaa;padding:10px 17px;font-size:10px;transition:background .25s}
-.nav-rsvp:hover{background:var(--blue)}
 .menu-toggle{display:none;width:40px;height:40px;align-items:center;justify-content:center;gap:6px;flex-direction:column}
 .menu-toggle i{width:22px;height:1px;background:var(--ink);transition:transform .25s}
 
@@ -189,7 +187,6 @@ h3{font-size:38px;white-space:pre-line}
 .venue-address>.icon{margin-top:5px;width:18px}
 .venue-address h3{font-size:27px;line-height:1.2;letter-spacing:-.01em}
 .venue-address p{font-size:11px;color:var(--muted);margin-top:4px}
-.venue-date{font-size:11px;line-height:1.9;margin:23px 0 25px}
 .venue-links{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
 .venue-links .button{padding:13px 20px;gap:25px}
 .map-toggle{margin-top:23px;color:var(--muted);border:0}
@@ -197,12 +194,8 @@ h3{font-size:38px;white-space:pre-line}
 #mapContainer iframe{border:0;width:100%;height:260px}
 
 /* Vestimenta */
-.details-grid{display:grid;grid-template-columns:1.18fr .83fr 1fr;gap:6%;align-items:center}
 .dress-copy h2{font-size:clamp(40px,3.7vw,56px)}
 .dress-code{font-family:var(--serif);font-size:34px;font-style:italic;border-top:1px solid var(--line);margin-top:26px;padding-top:21px}
-.dress-people{display:flex;gap:28px;margin:13px 0 0}
-.dress-people dt{font-size:9px;letter-spacing:.09em;text-transform:uppercase}
-.dress-people dd{font-size:11px;margin:5px 0 0;color:var(--muted)}
 .dress-note{font-size:11px;color:var(--muted);margin-top:18px}
 
 /* Regalos */
@@ -303,8 +296,6 @@ body:has(dialog[open]){overflow:hidden}
 .letter-paper{padding:44px 55px;text-align:center;border:1px solid #ccd0c4;margin:13px}
 .letter-paper h2{font-size:42px;margin:20px 0 24px}
 .letter-text{font-family:var(--serif);font-size:23px;line-height:1.5;white-space:pre-line;text-align:left}
-.letter-signoff{font-size:10px}
-.letter-signature{font-family:var(--serif);font-style:italic;font-size:41px;line-height:1.2;margin:5px 0 17px}
 
 /* Álbum de fotos */
 .lightbox{width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;background:#13232bed;color:white;overflow:hidden}
@@ -342,7 +333,6 @@ body:has(dialog[open]){overflow:hidden}
   /* Encabezado y menú */
   .navigation{gap:20px}
   .nav-links{gap:22px}
-  .nav-rsvp{gap:12px;padding:10px 12px}
   /* Portada */
   .hero-composition{gap:4.5%;padding-right:15px}
   .hero h1{font-size:7.5vw;max-width:calc(100% + 80px);margin-right:-80px}
@@ -350,8 +340,6 @@ body:has(dialog[open]){overflow:hidden}
   .hero-side{right:-12px}
   /* Piezas compartidas, vestimenta, regalos y lugar */
   .section-pad{padding-top:85px;padding-bottom:85px}
-  .details-grid{gap:4%}
-  .dress-people{gap:15px}
   .gift-copy{padding-left:5px}
   .venue-copy{padding:65px 38px}
   .venue-photo{min-height:600px}
@@ -372,7 +360,6 @@ body:has(dialog[open]){overflow:hidden}
   .brand-copy b{font-size:21px}
   .brand-mark{width:40px;height:40px;font-size:26px}
   .nav-links{gap:17px;font-size:10px}
-  .nav-rsvp{font-size:9px}
   /* Portada */
   .hero-topline{font-size:8px;letter-spacing:.1em}
   .theme-tag{font-size:8px;letter-spacing:.07em}
@@ -414,7 +401,6 @@ body:has(dialog[open]){overflow:hidden}
   .venue-links .button{font-size:9px;padding:12px 14px}
   .venue-photo{min-height:640px}
   /* Vestimenta */
-  .details-grid{grid-template-columns:1fr .85fr;gap:6%}
   /* Regalos */
   .gift-copy{grid-column:1/-1;margin-top:40px;border-top:1px solid var(--line);padding:30px 0 0;display:grid;grid-template-columns:40px 1fr 1.2fr;gap:20px;align-items:center}
   .gift-copy>p{margin:0}
@@ -441,7 +427,6 @@ body:has(dialog[open]){overflow:hidden}
   .brand-copy small{font-size:7px;letter-spacing:.12em}
   .brand-copy b{font-size:21px}
   .brand-mark{width:38px;height:38px;font-size:25px}
-  .nav-rsvp{margin-left:0;font-size:8px;padding:9px 11px;white-space:nowrap;gap:0}
   .menu-toggle{display:flex;width:30px;flex-shrink:0}
   .nav-links{position:absolute;top:73px;left:0;right:0;background:var(--paper);padding:20px 24px 25px;border-bottom:1px solid var(--line);flex-direction:column;gap:5px;display:none;box-shadow:0 10px 20px #203d4810}
   .nav-links.open{display:flex}
@@ -515,15 +500,11 @@ body:has(dialog[open]){overflow:hidden}
   .venue-address h3{font-size:30px}
   .venue-links{gap:22px}
   .venue-links .button{padding:14px 20px;font-size:10px}
-  .venue-date{font-size:10px}
   /* Vestimenta */
-  .details-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px 15px;align-items:start}
   .dress-copy{grid-column:1/-1}
   .dress-copy h2{font-size:46px}
   .dress-copy .section-description{max-width:280px}
   .dress-code{margin-top:23px;padding-top:17px;font-size:34px}
-  .dress-people{gap:35px}
-  .dress-people dd{font-size:10px}
   /* Regalos */
   .gift-copy{grid-column:1;grid-row:2;display:block;border:0;padding:0;margin:18px 0 0}
   .gift-copy>p{font-size:10px;margin-top:14px}
@@ -578,7 +559,6 @@ body:has(dialog[open]){overflow:hidden}
   .letter-paper{padding:33px 22px;margin:10px}
   .letter-paper h2{font-size:36px}
   .letter-text{font-size:22px}
-  .letter-signature{font-size:38px}
   /* Álbum de fotos */
   .lightbox[open]{gap:0}
   .lightbox figure{width:80vw}
@@ -597,14 +577,12 @@ body:has(dialog[open]){overflow:hidden}
   .brand-copy b{font-size:18px}
   .brand-mark{width:32px;height:32px;font-size:23px}
   .navigation{gap:5px}
-  .nav-rsvp{font-size:7px;padding:8px}
   /* Portada */
   .hero h1{font-size:12.7vw}
   .theme-tag{max-width:140px}
   .hero-meta{gap:10px}
   .hero-copy .button{font-size:9px;gap:22px}
   /* Vestimenta y confirmación */
-  .details-grid{gap:22px 12px}
   .rsvp-intro h2{font-size:58px}
   .attendance-options label{font-size:9px;gap:5px}
 }

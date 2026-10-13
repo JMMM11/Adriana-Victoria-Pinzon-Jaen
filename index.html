@@ -43,13 +43,14 @@
     <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V6l11-3v12M9 8l11-3"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="15" rx="3" ry="2.5"/></symbol>
     <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
     <symbol id="i-close" viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13.5 7.8L3 21l1.5-4.7A9 9 0 1 1 21 11.5Z"/><path d="M8 7c-2 4 5 10 8 8l-2-3-2 1-2-2 1-2-3-2Z"/></symbol>
   </svg>
 
   <!-- ===== Encabezado: monograma, emblema y menú ===== -->
   <nav class="navigation" aria-label="Navegación principal">
     <a class="brand" href="#inicio" aria-label="Inicio"><span class="brand-mark" data-monogram>AV</span><span class="brand-copy"><small data-text="marca"></small><b data-value="nombreCelebracion">Adriana Victoria Pinzón Jaén</b></span></a>
     <a class="nav-bridgerton" href="#inicio" aria-label="Volver al inicio"><img src="assets/decoracion/logo-bridgerton.svg" alt="Bridgerton" width="420" height="264"></a>
-    <div class="nav-links" id="navLinks"><a href="#invitacion" data-text="navInvitacion"></a><a href="#celebracion" data-text="navCelebracion"></a><a href="#detalles" data-text="navDetalles"></a><a href="confirmar.html" data-rsvp-link data-text="navRsvp"></a></div>
+    <div class="nav-links" id="navLinks"><a href="#invitacion" data-text="navInvitacion"></a><a href="#celebracion" data-text="navCelebracion"></a><a href="#detalles" data-text="navDetalles"></a><a href="#confirmar" data-text="navRsvp"></a></div>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks"><i></i><i></i></button>
   </nav>
 
@@ -156,7 +157,6 @@
         <h2 id="celebrationTitle">La celebración</h2>
         <span class="ornamental-divider" aria-hidden="true">❦</span>
         <p class="celebration-honoree">Los XV de Adriana Victoria</p>
-        <time class="celebration-date" datetime="2026-11-14">14 de noviembre de 2026</time>
       </div>
     </section>
 
@@ -167,37 +167,28 @@
         <p class="eyebrow" data-text="lugarEtiqueta"></p>
         <h2 id="venueTitle" data-text="lugarTitulo"></h2>
         <div class="venue-address"><svg class="icon"><use href="#i-pin"/></svg><div><h3 data-value="lugar.nombre"></h3><p data-value="lugar.salon"></p><p data-value="lugar.direccion"></p></div></div>
-        <p class="venue-date"><span data-value="fechaTexto"></span><br><span data-value="horaTexto"></span></p>
         <div class="venue-links"><a class="button button-ink" id="mapsLink" target="_blank" rel="noopener noreferrer"><span data-text="maps"></span><svg class="icon"><use href="#i-arrow"/></svg></a><a class="text-link" id="wazeLink" target="_blank" rel="noopener noreferrer" data-text="waze"></a></div>
         <button class="map-toggle text-link" id="mapToggle" aria-expanded="false" aria-controls="mapContainer"><span data-text="mapa"></span><svg class="icon"><use href="#i-down"/></svg></button>
         <div id="mapContainer" hidden></div>
       </div>
     </section>
 
-    <!-- ===== Vestimenta: código de vestir y figurín ===== -->
+    <!-- ===== Vestimenta: código de vestir y paleta reservada ===== -->
     <section class="details section-pad" id="detalles" aria-labelledby="detailsTitle">
-      <div class="details-grid">
-        <div class="dress-copy reveal">
-          <p class="eyebrow" data-text="detallesEtiqueta"></p>
-          <h2 id="detailsTitle" data-text="vestimentaTitulo"></h2>
-          <p class="section-description" data-text="vestimentaIntro"></p>
-          <p class="dress-code" data-value="vestimenta.titulo"></p>
-          <dl class="dress-people"><div><dt data-text="damas"></dt><dd data-value="vestimenta.damas"></dd></div><div><dt data-text="caballeros"></dt><dd data-value="vestimenta.caballeros"></dd></div></dl>
-          <p class="dress-note" id="dressNote" hidden></p>
-        </div>
-        <figure class="dress-figure reveal">
-          <div class="dress-icons" role="img" aria-label="Referencia de vestimenta formal: saco con corbata y vestido largo"><img src="assets/decoracion/saco.svg" alt="" loading="lazy" width="1548" height="1548"><img src="assets/decoracion/vestido.svg" alt="" loading="lazy" width="2412" height="2890"></div>
-          <figcaption data-text="vestimentaPie"></figcaption>
-        </figure>
+      <div class="dress-copy reveal">
+        <p class="eyebrow" data-text="detallesEtiqueta"></p>
+        <h2 id="detailsTitle" data-text="vestimentaTitulo"></h2>
+        <p class="section-description" data-text="vestimentaIntro"></p>
+        <p class="dress-code" data-value="vestimenta.titulo"></p>
+        <p class="dress-note" id="dressNote" hidden></p>
       </div>
     </section>
 
     <!-- ===== Regalos: lluvia de sobres ===== -->
     <section class="gifts section-pad" id="regalos" aria-labelledby="giftsTitle">
       <div class="gift-copy reveal">
-        <svg class="gift-art" viewBox="0 0 160 150" aria-hidden="true"><path class="gift-shadow" d="M26 139c20 7 88 7 108 0"/><path class="gift-box" d="M32 72h96v62a4 4 0 0 1-4 4H36a4 4 0 0 1-4-4Z"/><path class="gift-lid" d="M24 54h112a3 3 0 0 1 3 3v15a3 3 0 0 1-3 3H24a3 3 0 0 1-3-3V57a3 3 0 0 1 3-3Z"/><path class="gift-ribbon" d="M71 54h18v84H71Z"/><path class="gift-bow" d="M80 53C66 22 34 20 35 39c1 13 24 16 45 14Zm0 0c14-31 46-33 45-14-1 13-24 16-45 14Z"/><path class="gift-bow-line" d="M80 53C68 40 55 34 44 36m36 17c12-13 25-19 36-17M80 54 63 70m17-16 17 16"/><circle class="gift-knot" cx="80" cy="52" r="7"/><path class="gift-spark" d="m18 28 3 7 7 3-7 3-3 7-3-7-7-3 7-3Zm126-6 2 5 5 2-5 2-2 5-2-5-5-2 5-2Zm-8 84 2 4 4 2-4 2-2 4-2-4-4-2 4-2Z"/></svg>
+        <svg class="gift-art" viewBox="0 0 160 124" aria-hidden="true"><path class="envelope-body" d="M14 30h132v78a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4Z"/><path class="envelope-fold" d="M15 111 62 66m83 45L98 66"/><path class="envelope-flap" d="M14 30 80 80l66-50Z"/><circle class="envelope-seal" cx="80" cy="78" r="10"/></svg>
         <h2 id="giftsTitle" data-text="regalosTitulo"></h2>
-        <p data-value="regalos.mensaje"></p>
         <p class="gift-envelopes" id="giftEnvelopes" data-text="regalosSobres"></p>
         <div id="bankDetails" hidden></div>
         <div id="giftStores"></div>
@@ -247,9 +238,54 @@
       <!-- Aparece cuando hay más cartas de las que se están mostrando -->
       <button class="wall-more text-link" type="button" id="wallMore" hidden><span data-text="muroMas"></span><svg class="icon" aria-hidden="true"><use href="#i-down"/></svg></button>
     </section>
+
+    <!-- ===== Confirmación de asistencia: formulario y respuesta guardada ===== -->
+    <section class="rsvp section-pad" id="confirmar" aria-labelledby="rsvpTitle">
+      <!-- Presentación: título, fecha límite y lugares reservados -->
+      <div class="rsvp-intro">
+        <p class="eyebrow" data-text="rsvpEtiqueta"></p>
+        <h2 id="rsvpTitle" data-value="rsvp.titulo"></h2>
+        <p class="section-description" data-value="rsvp.subtitulo"></p>
+        <div class="rsvp-monogram"><svg aria-hidden="true"><use href="#i-crown"/></svg><span data-monogram>AV</span></div>
+        <p class="rsvp-deadline" id="deadline"></p>
+        <div class="reserved-seats" id="reservedSeats" hidden><b id="seatNumber"></b><span data-text="puestos"></span></div>
+      </div>
+
+      <div class="rsvp-form-wrap">
+        <!-- Formulario de confirmación -->
+        <form id="rsvpForm" novalidate>
+          <div class="field"><label for="guestName" data-value="rsvp.etiquetaNombre"></label><input id="guestName" name="nombre" autocomplete="name" maxlength="120" required aria-describedby="nameError"><p class="field-error" id="nameError" hidden></p></div>
+          <!-- confirmar.js añade aquí un campo por cada acompañante -->
+          <div id="companions"></div>
+          <fieldset class="attendance">
+            <legend data-value="rsvp.etiquetaAsistencia"></legend>
+            <div class="attendance-options"><label><input type="radio" name="asiste" value="si" required><span data-value="rsvp.opcionSi"></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></label><label><input type="radio" name="asiste" value="no"><span data-value="rsvp.opcionNo"></span></label></div>
+            <p class="field-error" id="attendanceError" hidden></p>
+          </fieldset>
+          <div class="field"><label for="guestSong" data-value="rsvp.etiquetaCancion"></label><input id="guestSong" name="cancion" maxlength="200"></div>
+          <div class="field"><label for="guestMessage" data-value="rsvp.etiquetaMensaje"></label><textarea id="guestMessage" name="mensaje" rows="3" maxlength="2000"></textarea></div>
+          <button class="button button-ink submit-button" type="submit" id="submitRsvp"><span data-value="rsvp.boton"></span><svg class="icon"><use href="#i-arrow"/></svg></button>
+          <p class="form-note" id="formNote">Tu respuesta se preparará para enviar por WhatsApp.</p>
+          <p class="field-error" id="submitError" role="alert" hidden></p>
+        </form>
+
+        <!-- Respuesta guardada: sello de aceptado y envío por WhatsApp -->
+        <div class="response-card" id="responseCard" hidden>
+          <p class="eyebrow" id="responseEyebrow"></p>
+          <h3 id="responseTitle"></h3>
+          <p id="responseGuest"></p>
+          <!-- Sello de aceptado, solo para quien confirma que asiste -->
+          <div class="acceptance-seal" id="acceptedSeal" hidden><span data-text="selloAceptado">Accepted</span><small data-value="iniciales">AV</small></div>
+          <p id="responseStatus"></p>
+          <a class="button button-ink" id="whatsappLink" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="#i-whatsapp"/></svg><span data-text="whatsappBoton"></span></a>
+          <p class="form-note" id="whatsappNote" data-text="whatsappNota"></p>
+          <button class="text-link" type="button" id="editResponse" data-text="corregir"></button>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ===== Pie de página: despedida y botón para confirmar asistencia ===== -->
+  <!-- ===== Pie de página: despedida ===== -->
   <footer class="footer" id="final">
     <div class="footer-petals" aria-hidden="true"><i></i><i></i><i></i></div>
     <p class="eyebrow" data-text="footerTema"></p>
@@ -257,7 +293,6 @@
     <p class="footer-name" data-value="nombreCompleto"></p>
     <p class="footer-farewell" data-text="despedida"></p>
     <p class="footer-thanks" data-text="gracias"></p>
-    <a class="button button-ink footer-rsvp" href="confirmar.html" data-rsvp-link><span data-text="navRsvp"></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
     <button class="replay-entry text-link" type="button" id="replayArrival" data-text="entradaRepetir"></button>
     <div class="footer-bottom"><span data-value="fechaTexto"></span><span data-value="lugar.nombre"></span><a href="#inicio" aria-label="Volver al inicio" data-text="volverArriba"></a></div>
   </footer>
@@ -273,10 +308,9 @@
     <div class="letter-paper">
       <svg class="letter-petals petal-emblem" aria-hidden="true"><use href="#i-petals"/></svg>
       <p class="eyebrow" data-text="cartaSello"></p>
+      <p class="letter-lead" data-text="cartaEntrada"></p>
       <h2 id="letterTitle" data-value="nombreCompleto"></h2>
       <div class="letter-text" id="letterText"></div>
-      <p class="letter-signoff" data-text="cartaFirma"></p>
-      <p class="letter-signature" data-value="nombre"></p>
     </div>
   </dialog>
 
@@ -288,11 +322,12 @@
     <button class="lightbox-next" id="lightboxNext" aria-label="Foto siguiente">→</button>
   </dialog>
 
-  <!-- ===== Scripts, en este orden: configuración, datos, servicios y luego la página ===== -->
+  <!-- ===== Scripts, en este orden: configuración, datos, servicios, la invitación y su formulario ===== -->
   <script src="configuracion.js"></script>
   <script src="datos.js"></script>
   <script src="servicios.js"></script>
   <script src="app.js"></script>
+  <script src="confirmar.js"></script>
   <script src="experiencia.js"></script>
   <script src="musica.js"></script>
 </body>

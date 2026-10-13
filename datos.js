@@ -11,7 +11,7 @@ window.EVENTO_BASE = {
 
   // ===== Textos largos: carta, historia y gaceta =====
   carta:
-    'Querido y distinguido invitado:\n\nEsta temporada, hay una celebración de la que toda la sociedad hablará. Con el corazón lleno de ilusión, te invito a mi gran noche: una velada para bailar, reír y escribir juntos el comienzo de un nuevo capítulo.\n\nTu presencia hará que esta velada sea verdaderamente inolvidable.',
+    'Querido y distinguido invitado:\n\nCon inmensa alegría y el corazón rebosante de orgullo, *Alberto Pinzón y Francisca Jaén* tienen el honor de invitarle a una velada extraordinaria, para celebrar a su más preciado tesoro: *su princesa, Adriana Victoria*.\n\nSu presencia hará de esta noche un recuerdo inolvidable.',
   historia:
     'Hay momentos que merecen su propio capítulo. Quince años de sueños, de risas y de personas que han hecho mi mundo más bonito. Ahora comienza una nueva temporada… y quiero vivirla contigo.',
   gaceta:
@@ -85,15 +85,11 @@ window.EVENTO_BASE = {
   // ===== Vestimenta =====
   vestimenta: {
     titulo: 'Vestimenta formal',
-    damas: 'Vestido largo',
-    caballeros: 'Saco y corbata',
-    nota: 'Los colores rosado y azul están reservados para Adriana. Te agradecemos evitar estos colores en tu vestimenta.',
+    nota: 'Paleta reservada: rosado en todas sus tonalidades.\n\nQue nuestra princesa sea la única rosa de la temporada.',
   },
 
   // ===== Regalos =====
   regalos: {
-    mensaje:
-      'Tu presencia es el regalo más especial. Si deseas tener un detalle con Adriana, tendremos lluvia de sobres.',
     lluviaDeSobres: true,
     banco: '',
     cuenta: '',
@@ -175,7 +171,7 @@ window.EVENTO_BASE = {
     heroEtiqueta: 'MIS XV AÑOS · LA GRAN NOCHE',
     heroLinea1: 'La Gran',
     heroLinea2: 'Noche',
-    heroSubtitulo: 'una chica especial',
+    heroSubtitulo: 'diamante de la temporada',
     heroFrase: 'Una nueva temporada. Una noche irrepetible.',
     heroBoton: 'Estás cordialmente invitado',
     heroPie: 'UNA HISTORIA POR ESCRIBIR',
@@ -200,7 +196,7 @@ window.EVENTO_BASE = {
     gacetaFirma: 'Una crónica al estilo de Lady Whistledown',
     cartaAbrir: 'Leer la invitación',
     cartaSello: 'Una invitación muy especial',
-    cartaFirma: 'Con todo mi cariño,',
+    cartaEntrada: 'La temporada anuncia su acontecimiento más esperado…',
     historiaEtiqueta: 'UN NUEVO CAPÍTULO',
     historiaTitulo: 'Quince primaveras.\nInfinitas posibilidades.',
     historiaCita: 'Que esta noche sea el comienzo\nde algo maravilloso.',
@@ -212,11 +208,8 @@ window.EVENTO_BASE = {
     detallesEtiqueta: 'LOS PEQUEÑOS DETALLES',
     vestimentaTitulo: 'Vestirse para\nla ocasión.',
     vestimentaIntro: 'Una noche de gala merece su mejor atuendo.',
-    vestimentaPie: 'Vestidos largos, saco y corbata',
-    damas: 'Damas',
-    caballeros: 'Caballeros',
-    regalosTitulo: 'El más bonito\nde los regalos.',
-    regalosSobres: 'Lluvia de sobres',
+    regalosTitulo: 'Muestra de cariño',
+    regalosSobres: 'LLUVIA DE SOBRES',
     copiarCuenta: 'Copiar cuenta',
     galeriaEtiqueta: 'EL ÁLBUM DE LA TEMPORADA',
     galeriaTitulo: 'Instantes para\natesorar.',

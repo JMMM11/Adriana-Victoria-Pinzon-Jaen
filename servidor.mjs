@@ -9,7 +9,6 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 // ===== Archivos que se pueden abrir desde el navegador =====
 const publicFiles = new Set([
   'index.html',
-  'confirmar.html',
   'estilos.css',
   'experiencia.css',
   'adriana.css',

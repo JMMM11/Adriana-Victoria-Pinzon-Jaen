@@ -39,14 +39,12 @@
 .ornamental-divider{display:block;font-family:var(--serif);color:var(--gold);font-size:26px;margin:13px auto}
 
 /* La celebración */
-.celebration-date{display:block;font-family:var(--serif);font-size:clamp(24px,2.5vw,35px);letter-spacing:.045em;line-height:1.35}
 .celebration-candle{position:absolute;width:135px;height:180px;object-fit:contain;top:50%;transform:translateY(-50%);opacity:.86;pointer-events:none}
 .candle-left{left:19px}
 .candle-right{right:19px}
 
 /* Vestimenta */
 .dress-note{padding:19px 21px;border-left:2px solid #c48ba6;background:#f8d7e780;font-size:12px;line-height:1.9;border-radius:0 22px 22px 0;max-width:450px}
-.dress-people[hidden]{display:none}
 .dress-code{font-size:33px}
 
 /* Álbum de fotos */
@@ -151,7 +149,6 @@
   .candle-right{right:calc(50% - 85px)}
   .celebration .eyebrow{font-size:7px;letter-spacing:.12em}
   .celebration h2{font-size:43px}
-  .celebration-date{font-size:23px;letter-spacing:.015em}
   /* Vestimenta */
   .dress-note{font-size:11px;padding:15px 17px;line-height:1.8}
   /* Confirmación de asistencia */
@@ -204,7 +201,6 @@
   .brand-copy small{font-size:8px;letter-spacing:.1em}
   .brand-copy b{font-size:24px;line-height:1.2}
   .menu-toggle{grid-column:2;grid-row:1;width:44px;height:44px}
-  .nav-rsvp{grid-column:1/-1;grid-row:2;min-height:44px;padding:9px 16px;justify-content:center;font-size:12px;letter-spacing:.02em}
   .nav-links{top:100%;padding:12px var(--gutter) 18px;gap:3px;font-size:15px;max-height:65dvh;overflow:auto}
   .nav-links a{display:flex;align-items:center;min-height:48px;padding:10px 0}
   /* Portada */
@@ -265,15 +261,13 @@
   .celebration-frame{padding:106px 13px 36px}
   .celebration .eyebrow{font-size:9px;letter-spacing:.1em}
   .celebration h2{font-size:42px}
-  .celebration-date{font-size:25px;line-height:1.4;letter-spacing:.015em}
   /* Lugar y mapa */
   .venue-copy{padding:48px var(--gutter)}
   .venue-address h3{font-size:32px;line-height:1.25}
-  .venue-address p,.venue-date{font-size:14px;line-height:1.8}
+  .venue-address p{font-size:14px;line-height:1.8}
   .venue-links{gap:14px;flex-wrap:wrap}
   .venue-photo figcaption{font-size:10px;line-height:1.5;right:20px}
   /* Vestimenta */
-  .details-grid{grid-template-columns:1fr;gap:24px}
   .dress-copy{grid-column:1}
   .dress-copy .section-description{max-width:none}
   .dress-note{font-size:14px;line-height:1.8;padding:17px 18px}
@@ -356,7 +350,6 @@
   .hero-subtitle{font-size:32px}
   /* La celebración, álbum, confirmación y libro de mensajes */
   .celebration h2{font-size:37px}
-  .celebration-date{font-size:23px}
   .gallery-controls button{padding:7px}
   .gallery-controls button span{font-size:10px}
   .rsvp-form-wrap,.private-letter{padding-left:17px;padding-right:17px}
@@ -379,7 +372,6 @@
   .navigation{display:grid;grid-template-columns:minmax(0,1fr) auto 44px;grid-template-rows:auto auto;height:auto;min-height:76px;gap:7px 12px;padding:12px var(--gutter)}
   .brand{grid-column:1;grid-row:1;min-width:0;margin:0}
   .nav-bridgerton{position:static;grid-column:1/-1;grid-row:2;justify-self:center;transform:none;width:87px;height:62px}
-  .nav-rsvp{grid-column:2;grid-row:1;margin:0;white-space:nowrap}
   .menu-toggle{display:flex;grid-column:3;grid-row:1;width:44px;height:44px}
   .nav-links{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;gap:4px;padding:14px var(--gutter) 18px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 10px 20px #203d4810}
   .nav-links.open{display:flex}
@@ -392,7 +384,6 @@
   .brand{grid-column:1;grid-row:1}
   .menu-toggle{grid-column:2;grid-row:1}
   .nav-bridgerton{grid-column:1/-1;grid-row:2;width:83px;height:57px}
-  .nav-rsvp{grid-column:1/-1;grid-row:3}
 }
 
 /* La casa de la entrada: fotografía a sangre que se acerca hasta la puerta. */
@@ -420,31 +411,26 @@
 .section-description,.gazette-column p,.letter-text,.hero-intro,.dress-note,.gift-copy>p:not(.gift-envelopes),.gallery-intro>p,.message-privacy,.wall-text,.footer-thanks,.form-note,.response-card>p:not(.eyebrow){text-align:justify;hyphens:auto;-webkit-hyphens:auto}
 .gifts .gift-copy>p:not(.gift-envelopes),.footer-thanks,.response-card>p:not(.eyebrow){text-align-last:center}
 .celebration-honoree{font-family:var(--script);font-size:clamp(38px,3.6vw,52px);line-height:1.2;color:#80613e;margin:6px 0 10px}
-.celebration-date{letter-spacing:.02em}
 
 /* Vestimenta: texto y figurín de referencia. */
-.details-grid{grid-template-columns:1.15fr .85fr;gap:8%}
 .dress-copy .eyebrow{margin-bottom:24px}
-.dress-people{display:flex;gap:34px;margin-top:20px}
-.dress-people dt{font-size:10px;letter-spacing:.12em}
-.dress-people dd{font-family:var(--serif);font-size:25px;line-height:1.2;color:var(--ink);margin-top:4px}
-.dress-figure{justify-self:center;width:100%;max-width:340px;padding:34px 26px 20px;background:#fffaf4;border:1px solid #c4a66b99;border-radius:120px 120px 6px 6px/46px 46px 6px 6px;outline:1px solid #c4a66b55;outline-offset:7px;text-align:center}
-.dress-icons{display:flex;align-items:flex-end;justify-content:center;gap:7%}
-.dress-icons img{width:auto;height:auto;max-width:46%;max-height:230px}
-.dress-figure figcaption{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.3;color:#6b705d;margin-top:14px;padding-top:14px;border-top:1px solid #c4a66b66}
+.dress-copy{max-width:640px;margin:0 auto;text-align:center}
+.dress-copy .section-description,.dress-note{margin-left:auto;margin-right:auto}
+.dress-note{white-space:pre-line;text-align:center;border-left:0;border-radius:22px}
 
 /* Los regalos tienen su propia sección. */
 .gifts{background:#e3e8dc;text-align:center}
 .gifts .gift-copy{max-width:540px;margin:0 auto;padding:0}
 .gift-art{display:block;width:132px;height:auto;margin:0 auto 26px}
-.gift-box{fill:#fffaf4;stroke:#3d493e;stroke-width:1.4}
-.gift-lid{fill:#f8d7e7;stroke:#3d493e;stroke-width:1.4}
-.gift-ribbon{fill:#c9a968}
-.gift-bow{fill:#dcc391;stroke:#8f7140;stroke-width:1.4;stroke-linejoin:round}
-.gift-knot{fill:#c9a968;stroke:#8f7140;stroke-width:1.4}
-.gift-bow-line{fill:none;stroke:#8f7140;stroke-width:1.2;stroke-linecap:round}
-.gift-shadow{fill:none;stroke:#3d493e33;stroke-width:5;stroke-linecap:round}
-.gift-spark{fill:#ae8b50}
+.envelope-body{fill:#fffaf4;stroke:#3d493e;stroke-width:1.4;stroke-linejoin:round}
+.envelope-flap{fill:#f8d7e7;stroke:#3d493e;stroke-width:1.4;stroke-linejoin:round}
+.envelope-fold{fill:none;stroke:#3d493e;stroke-width:1.2;stroke-linecap:round}
+.envelope-seal{fill:#c9a968;stroke:#8f7140;stroke-width:1.4}
+
+/* La carta: frase de entrada, nombre en mayúsculas y nombres resaltados. */
+.letter-lead{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.3;color:#6b705d;margin-top:14px}
+.letter-paper h2{text-transform:uppercase;letter-spacing:.03em;font-size:clamp(23px,6.2vw,32px);line-height:1.2}
+.letter-text em{font-weight:600}
 .gifts h2{font-size:clamp(40px,3.9vw,58px);white-space:pre-line}
 .gifts .gift-copy>p{font-size:13px;line-height:1.9;margin-top:22px}
 .gifts .gift-copy .gift-envelopes{font-size:30px;margin-top:26px;border-color:#ad966e}
@@ -469,13 +455,9 @@
   .gift-art{width:118px}
   .celebration-honoree{font-size:30px;white-space:nowrap}
   /* Vestimenta */
-  .details-grid{grid-template-columns:1fr;gap:34px}
   .dress-copy{text-align:center}
   .dress-code{font-size:34px}
-  .dress-people{justify-content:center;gap:28px}
-  .dress-people dd{font-size:24px}
-  .dress-note{text-align:left;margin-left:auto;margin-right:auto}
-  .dress-figure{max-width:290px;padding:30px 22px 18px}
+  .dress-note{margin-left:auto;margin-right:auto}
   /* Regalos */
   .gifts h2{font-size:42px}
   .gifts .gift-copy>p{font-size:15px;line-height:1.8}
@@ -484,9 +466,6 @@
   .gallery-reserved-frame{font-size:58px}
   .letter-text{font-size:22px}
 }
-
-/* Invitación y carta */
-.letter-signoff{margin-top:26px}
 
 /* El libro: los mensajes de los invitados en cuadrícula. */
 .message-wall{background:linear-gradient(160deg,#f8d7e73d,#e3e8dc);padding-top:70px}
@@ -503,19 +482,8 @@
 .wall-card time{font-size:10px;letter-spacing:.06em;color:#707469}
 .wall-more{display:flex;margin:18px auto 0}
 
-/* La confirmación en su propia página. */
-.footer-rsvp{margin-top:26px}
+/* Pie de página: botón para volver a ver la entrada. */
 .replay-entry{display:flex;margin-left:auto;margin-right:auto}
-.confirm-page .rsvp{min-height:calc(100dvh - 300px);align-items:center}
-
-/* Escritorio */
-@media(min-width:1101px){
-  .confirm-page .nav-rsvp{margin-left:auto}
-}
-
-/* Confirmación de asistencia */
-.confirm-footer{padding-top:44px;padding-bottom:60px}
-.confirm-footer .text-link{display:inline-flex;margin-top:18px}
 
 /* Tablet horizontal (hasta 1000 px) */
 @media(max-width:1000px){
@@ -534,8 +502,4 @@
   .wall-text{font-size:17px;line-height:1.4;text-align:left}
   .wall-card cite{font-size:21px}
   .wall-card time{font-size:9px}
-  /* Pie de página y confirmación */
-  .footer-rsvp{width:100%;max-width:320px}
-  .confirm-page .rsvp{min-height:0}
-  .confirm-footer{padding-bottom:calc(88px + env(safe-area-inset-bottom))}
 }

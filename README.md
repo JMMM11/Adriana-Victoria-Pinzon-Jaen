@@ -4,7 +4,7 @@ Invitación digital: el invitado entra a la casa, recibe una carta de Lady Whist
 
 ## Dónde está cada cosa
 
-- Páginas: `index.html` (invitación) y `confirmar.html` (confirmación de asistencia).
+- Página: `index.html` (la invitación completa; el formulario de confirmación de asistencia está al final).
 - Fotos, WhatsApp y conexión a la base de datos: `configuracion.js`. Las fotos se guardan en `assets/fotos/`.
 - Textos y datos de la fiesta: `datos.js`.
 - Estilos, en el orden en que se cargan: `estilos.css` (base), `experiencia.css` (entrada y animaciones) y `adriana.css` (colores y ajustes para teléfono).

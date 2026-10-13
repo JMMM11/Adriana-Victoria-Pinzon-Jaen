@@ -7,7 +7,7 @@
 
 /* Base y piezas compartidas */
 :root{--paper:#f7f3e9;--ink:#3d493e;--muted:#707469;--blue:#e3e8dc;--night:#3d5145;--rose:#f8d7e7;--sage:#e3e8dc;--gold:#ae8b50;--line:#cccdbd;--script:Pinyon,Cormorant,Georgia,serif}
-.handwritten,.story-signature,.letter-signature{font-family:var(--script);font-style:normal}
+.handwritten,.story-signature{font-family:var(--script);font-style:normal}
 .handwritten{font-size:30px;line-height:1.4}
 
 /* Portada */

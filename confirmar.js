@@ -1,4 +1,5 @@
-/* Confirmación de asistencia: página propia con los mismos datos de la invitación. */
+/* Confirmación de asistencia: el formulario al final de la invitación (index.html).
+   Los textos con data-text y data-value los pinta app.js. */
 (() => {
   'use strict';
   const $ = (s) => document.querySelector(s),
@@ -12,7 +13,6 @@
     toastTimer;
 
   // ===== Utilidades =====
-  const readPath = (obj, path) => path.split('.').reduce((v, key) => v?.[key], obj);
   function node(tag, className, text) {
     const el = document.createElement(tag);
     if (className) el.className = className;
@@ -41,22 +41,8 @@
     return window.AdrianaServicios.available();
   }
 
-  // ===== Textos de la página =====
+  // ===== Textos propios del formulario =====
   function render() {
-    $$('[data-text]').forEach((el) => {
-      el.textContent = data.textos[el.dataset.text] ?? '';
-    });
-    $$('[data-value]').forEach((el) => {
-      el.textContent = readPath(data, el.dataset.value) ?? '';
-    });
-    $$('[data-monogram]').forEach((el) => {
-      el.textContent = data.iniciales;
-    });
-    document.title = `${data.rsvp.boton} · ${data.nombreCompleto}`;
-    // El ancla evita repetir la animación de entrada al volver.
-    $$('[data-home-link]').forEach((a) => {
-      a.href = 'index.html' + location.search + '#inicio';
-    });
     $('#deadline').textContent = data.rsvp.fechaLimite
       ? `Agradeceremos tu respuesta antes del ${data.rsvp.fechaLimite}.`
       : '';

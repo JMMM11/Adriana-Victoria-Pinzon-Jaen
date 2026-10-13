@@ -1,4 +1,4 @@
-/* Música compartida por la invitación y la página de confirmación. */
+/* Música de fondo de la invitación. */
 (() => {
   'use strict';
   const button = document.querySelector('#musicToggle'),

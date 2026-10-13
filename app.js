@@ -105,7 +105,10 @@
       data.imagenes.lugarAlt,
       data.imagenes.lugarPosicion,
     );
-    $('#letterText').textContent = data.carta;
+    // En la carta, lo escrito *entre asteriscos* se muestra resaltado.
+    $('#letterText').replaceChildren(
+      ...data.carta.split(/\*(.+?)\*/).map((part, i) => (i % 2 ? node('em', '', part) : part)),
+    );
     $('#dressNote').textContent = data.vestimenta.nota;
     $('#dressNote').hidden = !data.vestimenta.nota;
     for (const [id, value] of [
@@ -127,10 +130,6 @@
     renderGallery();
     renderPersonal();
     renderMessageAvailability();
-    // La confirmación vive en su propia página y conserva los datos del enlace personal.
-    $$('[data-rsvp-link]').forEach((a) => {
-      a.href = 'confirmar.html' + location.search;
-    });
     window.InvitationContext = { config: data };
     window.dispatchEvent(
       new CustomEvent('invitation:render', { detail: window.InvitationContext }),
