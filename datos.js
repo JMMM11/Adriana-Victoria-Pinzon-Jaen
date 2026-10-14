@@ -15,7 +15,7 @@ window.EVENTO_BASE = {
   historia:
     'Hay momentos que merecen su propio capítulo. Quince años de sueños, de risas y de personas que han hecho mi mundo más bonito. Ahora comienza una nueva temporada… y quiero vivirla contigo.',
   gaceta:
-    'Dearest Gentle Reader… Esta temporada, la sociedad tiene una cita muy especial: los quince años de Adriana Victoria Pinzón Jaén. Entre bailes, jardines y luces de salón, una nueva historia está por comenzar. Tu presencia será parte de sus páginas más queridas.',
+    'Querido y gentil lector… Esta temporada, la sociedad tiene una cita muy especial: los quince años de Adriana Victoria Pinzón Jaén. Entre bailes, jardines y luces de salón, una nueva historia está por comenzar. Tu presencia será parte de sus páginas más queridas.',
 
   // ===== Fotos de cada sección =====
   imagenes: {
