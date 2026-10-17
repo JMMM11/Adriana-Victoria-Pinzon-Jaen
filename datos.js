@@ -19,9 +19,9 @@ window.EVENTO_BASE = {
 
   // ===== Fotos de cada sección =====
   imagenes: {
-    portada: 'assets/salon-regency.jpg',
-    portadaAlt: 'Salón Regency iluminado por velas, con glicinas y una araña de cristal',
-    portadaPosicion: '50% 50%',
+    portada: 'assets/fotos/principal.jpg',
+    portadaAlt: 'Adriana Victoria con su vestido de quince años',
+    portadaPosicion: '60% 62%',
     historia: 'assets/detalles-del-baile.jpg',
     historiaAlt: 'Un vestido azul, una tiara y cartas selladas sobre un tocador Regency',
     historiaPosicion: '50% 50%',
@@ -47,26 +47,10 @@ window.EVENTO_BASE = {
   carruselPortada: {
     segundos: 5,
     fotos: [
-      {
-        archivo: 'assets/jardin-glicinas.jpg',
-        alt: 'Un jardín Regency con glicinas y un pabellón iluminado al atardecer',
-        posicion: '50% 50%',
-      },
-      {
-        archivo: 'assets/escalera-del-debut.jpg',
-        alt: 'Una gran escalera de gala iluminada por velas y una araña de cristal',
-        posicion: '50% 50%',
-      },
-      {
-        archivo: 'assets/te-de-la-temporada.jpg',
-        alt: 'Una mesa de té con porcelana azul y una invitación sellada junto a la ventana',
-        posicion: '50% 50%',
-      },
-      {
-        archivo: 'assets/detalles-del-baile.jpg',
-        alt: 'Un vestido azul, una tiara y guantes preparados para el baile',
-        posicion: '35% 50%',
-      },
+      { archivo: 'assets/fotos/_THL1335 1.jpg', alt: 'Adriana Victoria junto al lago al atardecer', posicion: '50% 45%' },
+      { archivo: 'assets/fotos/_THL1544 1.jpg', alt: 'Adriana Victoria en el campo al caer la tarde', posicion: '50% 50%' },
+      { archivo: 'assets/fotos/_THL1480 1.jpg', alt: 'Adriana Victoria sentada con su vestido extendido sobre el césped', posicion: '50% 50%' },
+      { archivo: 'assets/fotos/_THL1128.jpg', alt: 'Adriana Victoria en el jardín con su vestido de quince años', posicion: '50% 60%' },
     ],
   },
 
@@ -97,39 +81,8 @@ window.EVENTO_BASE = {
     tiendas: [],
   },
 
-  // ===== Álbum de fotos =====
-  fotos: [
-    {
-      archivo: 'assets/detalles-del-baile.jpg',
-      texto: 'Los detalles de una noche soñada',
-      alt: 'Tiara, guantes de seda y una invitación sellada',
-      posicion: '50% 50%',
-    },
-    {
-      archivo: 'assets/salon-regency.jpg',
-      texto: 'Donde comienza la magia',
-      alt: 'Salón Regency con luz de velas',
-      posicion: '50% 50%',
-    },
-    {
-      archivo: 'assets/jardin-glicinas.jpg',
-      texto: 'Un jardín en flor',
-      alt: 'Un jardín Regency con glicinas al atardecer',
-      posicion: '50% 50%',
-    },
-    {
-      archivo: 'assets/escalera-del-debut.jpg',
-      texto: 'La escalera del debut',
-      alt: 'Una gran escalera de gala iluminada por velas',
-      posicion: '50% 50%',
-    },
-    {
-      archivo: 'assets/te-de-la-temporada.jpg',
-      texto: 'El té de la temporada',
-      alt: 'Una mesa de té con porcelana azul junto a la ventana',
-      posicion: '50% 50%',
-    },
-  ],
+  // ===== Álbum de fotos (las de Adriana se ponen en configuracion.js) =====
+  fotos: [],
   espaciosAlbum: 0,
 
   // ===== Música =====
