@@ -415,6 +415,7 @@
 .dress-copy .eyebrow{margin-bottom:24px}
 .dress-copy{max-width:640px;margin:0 auto;text-align:center}
 .dress-copy .section-description,.dress-note{margin-left:auto;margin-right:auto}
+.dress-copy .section-description{text-align-last:center}
 .dress-note{white-space:pre-line;text-align:center;border-left:0;border-radius:22px}
 
 /* La foto del retrato redondea sus esquinas, igual que las líneas doradas del marco. */
