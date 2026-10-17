@@ -1,0 +1,19 @@
+# Mantiene despierta la base de datos de Supabase: el plan gratis la pausa tras unos 7 días sin actividad.
+# Cada 2 días hace una lectura pequeña del libro de mensajes, igual que la que hace la invitación al abrirse.
+# Para apagarlo: GitHub > Actions > "Supabase despierto" > ⋯ > Disable workflow (o borra este archivo).
+name: Supabase despierto
+
+on:
+  schedule:
+    - cron: '0 14 */2 * *'
+  workflow_dispatch:
+
+jobs:
+  leer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Leer un mensaje del libro
+        run: |
+          curl --fail --silent --show-error --max-time 30 \
+            -H "apikey: sb_publishable_R3365D0NkMjMlcwcP7x1zw_Kw0_Ws_f" \
+            "https://vavvvztvuttndlrnfeqf.supabase.co/rest/v1/mensajes_adriana?select=creado&limit=1"
