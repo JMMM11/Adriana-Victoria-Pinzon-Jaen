@@ -117,6 +117,18 @@
     }
   });
   window.addEventListener('pagehide', remember);
+  // Al salir de la página (otra app, otra pestaña, pantalla bloqueada) la música se pausa y vuelve al regresar.
+  let resumeOnReturn = false;
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      resumeOnReturn = playing;
+      if (playing) audio.pause();
+      remember();
+    } else if (resumeOnReturn && !saved.paused) {
+      resumeOnReturn = false;
+      audio.play().catch(() => setState(false));
+    }
+  });
   document.addEventListener('click', onInteraction, true);
   document.addEventListener('keydown', onInteraction, true);
   void start();

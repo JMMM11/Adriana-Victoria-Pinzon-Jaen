@@ -139,8 +139,6 @@ window.EVENTO_BASE = {
     entradaRepetir: 'Volver a vivir la entrada',
     retratoEtiqueta: 'LA PROTAGONISTA DE ESTA HISTORIA',
     selloAceptado: 'Accepted',
-    galeriaAnterior: 'Foto anterior',
-    galeriaSiguiente: 'Siguiente foto',
     galeriaAyuda: 'Toca una foto para ampliarla. Desliza para ver más.',
     gacetaMarca: 'La gaceta de la sociedad',
     gacetaEdicion: 'Edición extraordinaria · Mis XV años',

@@ -213,8 +213,6 @@ h3{font-size:38px;white-space:pre-line}
 .gallery-header h2{font-size:clamp(44px,4.3vw,65px);margin-top:18px}
 .gallery-intro{width:250px;font-size:11px;color:var(--muted)}
 .gallery-controls{display:flex;align-items:center;gap:22px;margin-top:28px;color:var(--ink)}
-.gallery-controls button{border:1px solid #a3b0a7;width:42px;height:42px;border-radius:50%;font-size:19px;transition:background .25s}
-.gallery-controls button:hover{background:#e2e6dc}
 .gallery-controls span{font-size:9px;letter-spacing:.15em}
 .gallery-track{display:flex;gap:28px;overflow-x:auto;padding:12px var(--gutter) 20px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#9aa8a0 #e6dcd4;overscroll-behavior-x:contain}
 .gallery-photo{flex:0 0 47%;scroll-snap-align:center;min-width:0}
@@ -515,7 +513,6 @@ body:has(dialog[open]){overflow:hidden}
   .gallery-intro{width:auto;margin-top:22px;display:flex;gap:15px;align-items:flex-end;justify-content:space-between}
   .gallery-intro>p{font-size:10px;max-width:190px}
   .gallery-controls{margin:0;gap:11px}
-  .gallery-controls button{height:32px;width:32px;font-size:17px}
   .gallery-controls span{display:none}
   .gallery-track{gap:18px;padding-bottom:17px}
   .gallery-photo{flex-basis:83%}

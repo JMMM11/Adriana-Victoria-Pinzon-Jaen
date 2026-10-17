@@ -390,8 +390,6 @@
     $('#galleryControls').hidden = count < 2 || track.scrollWidth <= track.clientWidth + 2;
     $('#galleryCounter').textContent =
       `${String(galleryIndex + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')}`;
-    $('#galleryPrev').disabled = galleryIndex <= 0;
-    $('#galleryNext').disabled = galleryIndex >= count - 1;
   }
   function moveGallery(direction) {
     const track = $('#galleryTrack');
@@ -640,8 +638,19 @@
     },
     { passive: true },
   );
-  $('#galleryPrev').addEventListener('click', () => moveGallery(-1));
-  $('#galleryNext').addEventListener('click', () => moveGallery(1));
+  // El álbum pasa solo de foto en foto mientras se ve; si el invitado lo toca o pasa el ratón, espera.
+  let galleryHold = 0;
+  for (const type of ['pointerdown', 'pointerenter', 'wheel', 'focusin'])
+    $('#galleryTrack').addEventListener(type, () => (galleryHold = Date.now()), { passive: true });
+  setInterval(() => {
+    const track = $('#galleryTrack'),
+      box = track.getBoundingClientRect();
+    if (reduced || document.hidden || $('#lightbox').open || track.children.length < 2) return;
+    if (Date.now() - galleryHold < 8000 || track.matches(':hover')) return;
+    if (box.bottom < 0 || box.top > innerHeight) return;
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    moveGallery(atEnd ? -galleryIndex : 1);
+  }, 4000);
   $('#lightboxPrev').addEventListener('click', () => openPhoto(lightboxIndex - 1));
   $('#lightboxNext').addEventListener('click', () => openPhoto(lightboxIndex + 1));
   $('#closeLightbox').addEventListener('click', () => $('#lightbox').close());

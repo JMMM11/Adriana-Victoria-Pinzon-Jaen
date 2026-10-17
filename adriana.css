@@ -282,8 +282,6 @@
   .gallery-header h2{font-size:46px}
   .gallery-intro>p,.gallery-help{font-size:13px;line-height:1.7}
   .gallery-controls{gap:9px;justify-content:space-between}
-  .gallery-controls button{height:auto;min-height:46px;min-width:44px;padding:8px 10px}
-  .gallery-controls button span{font-size:11px}
   .gallery-controls>span{font-size:10px;letter-spacing:0}
   .gallery-photo figcaption{font-size:12px;line-height:1.6}
   .gallery-photo{flex-basis:87%}
@@ -353,8 +351,6 @@
   .hero-subtitle{font-size:32px}
   /* La celebración, álbum, confirmación y libro de mensajes */
   .celebration h2{font-size:37px}
-  .gallery-controls button{padding:7px}
-  .gallery-controls button span{font-size:10px}
   .rsvp-form-wrap,.private-letter{padding-left:17px;padding-right:17px}
   .message-book-heading h2{font-size:43px}
 }
