@@ -214,12 +214,14 @@ h3{font-size:38px;white-space:pre-line}
 .gallery-intro{width:250px;font-size:11px;color:var(--muted)}
 .gallery-controls{display:flex;align-items:center;gap:22px;margin-top:28px;color:var(--ink)}
 .gallery-controls span{font-size:9px;letter-spacing:.15em}
-.gallery-track{display:flex;gap:28px;overflow-x:auto;padding:12px var(--gutter) 20px;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:#9aa8a0 #e6dcd4;overscroll-behavior-x:contain}
+.gallery-track{display:flex;gap:28px;overflow-x:auto;padding:12px var(--gutter) 20px;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+/* El álbum se mueve solo o deslizando: sin barra de desplazamiento visible. */
+.gallery-track::-webkit-scrollbar{display:none}
 .gallery-photo{flex:0 0 47%;scroll-snap-align:center;min-width:0}
-.gallery-photo:nth-child(even){flex-basis:28%;padding-top:50px}
+.gallery-photo.is-alt{flex-basis:28%;padding-top:50px}
 .gallery-photo>button{width:100%;display:block;overflow:hidden;padding:0}
 .gallery-photo img{aspect-ratio:1.3;object-fit:cover;transition:transform .7s}
-.gallery-photo:nth-child(even) img{aspect-ratio:.78}
+.gallery-photo.is-alt img{aspect-ratio:.78}
 .gallery-photo>button:hover img{transform:scale(1.025)}
 .gallery-photo figcaption{display:flex;gap:20px;font-size:10px;margin-top:15px}
 .gallery-photo figcaption>span:first-child{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1;color:#8f9c95}
@@ -348,7 +350,7 @@ body:has(dialog[open]){overflow:hidden}
   /* Confirmación y álbum */
   .rsvp{gap:8%}
   .gallery-photo{flex-basis:55%}
-  .gallery-photo:nth-child(even){flex-basis:32%}
+  .gallery-photo.is-alt{flex-basis:32%}
 }
 
 /* Tablet (hasta 850 px) */
@@ -516,10 +518,10 @@ body:has(dialog[open]){overflow:hidden}
   .gallery-controls span{display:none}
   .gallery-track{gap:18px;padding-bottom:17px}
   .gallery-photo{flex-basis:83%}
-  .gallery-photo:nth-child(even){flex-basis:63%;padding-top:29px}
+  .gallery-photo.is-alt{flex-basis:63%;padding-top:29px}
   .gallery-photo img{aspect-ratio:1.07}
   .gallery-photo figcaption{font-size:9px;gap:12px}
-  .gallery-photo:nth-child(even) img{aspect-ratio:.77}
+  .gallery-photo.is-alt img{aspect-ratio:.77}
   .gallery-section{padding-bottom:42px}
   /* Confirmación de asistencia */
   .rsvp{grid-template-columns:1fr;gap:35px;padding-top:58px;padding-bottom:58px}

@@ -337,7 +337,7 @@
     const track = $('#galleryTrack');
     track.replaceChildren();
     data.fotos.forEach((photo, index) => {
-      const fig = node('figure', 'gallery-photo reveal');
+      const fig = node('figure', `gallery-photo reveal${index % 2 ? ' is-alt' : ''}`);
       const btn = node('button');
       btn.type = 'button';
       btn.setAttribute(
@@ -367,7 +367,7 @@
     });
     // Espacios reservados para las fotos que la anfitriona añadirá en configuracion.js.
     for (let i = 0; i < (data.espaciosAlbum || 0); i++) {
-      const fig = node('figure', 'gallery-photo gallery-reserved reveal');
+      const fig = node('figure', `gallery-photo gallery-reserved reveal${(data.fotos.length + i) % 2 ? ' is-alt' : ''}`);
       const frame = node('div', 'gallery-reserved-frame');
       frame.setAttribute('aria-hidden', 'true');
       frame.append(node('span', '', data.iniciales));
@@ -388,8 +388,9 @@
     const track = $('#galleryTrack');
     const count = track.children.length;
     $('#galleryControls').hidden = count < 2 || track.scrollWidth <= track.clientWidth + 2;
+    const shown = Number(track.children[galleryIndex]?.querySelector('[data-photo]')?.dataset.photo ?? galleryIndex);
     $('#galleryCounter').textContent =
-      `${String(galleryIndex + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')}`;
+      `${String(shown + 1).padStart(2, '0')} / ${String(count).padStart(2, '0')}`;
   }
   function moveGallery(direction) {
     const track = $('#galleryTrack');
@@ -638,18 +639,25 @@
     },
     { passive: true },
   );
-  // El álbum pasa solo de foto en foto mientras se ve; si el invitado lo toca o pasa el ratón, espera.
+  // El álbum pasa solo de foto en foto mientras se ve; si el invitado lo toca o lo desliza, espera un momento.
   let galleryHold = 0;
-  for (const type of ['pointerdown', 'pointerenter', 'wheel', 'focusin'])
+  for (const type of ['pointerdown', 'wheel', 'focusin'])
     $('#galleryTrack').addEventListener(type, () => (galleryHold = Date.now()), { passive: true });
   setInterval(() => {
     const track = $('#galleryTrack'),
       box = track.getBoundingClientRect();
     if (reduced || document.hidden || $('#lightbox').open || track.children.length < 2) return;
-    if (Date.now() - galleryHold < 8000 || track.matches(':hover')) return;
+    if (Date.now() - galleryHold < 8000) return;
     if (box.bottom < 0 || box.top > innerHeight) return;
-    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
-    moveGallery(atEnd ? -galleryIndex : 1);
+    // Carrusel infinito: las fotos ya vistas pasan al final de la fila, así siempre hay una siguiente.
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+    let shift = 0;
+    for (; galleryIndex > 0; galleryIndex--) {
+      shift += track.firstElementChild.offsetWidth + gap;
+      track.append(track.firstElementChild);
+    }
+    if (shift) track.scrollTo({ left: track.scrollLeft - shift, behavior: 'instant' });
+    moveGallery(1);
   }, 4000);
   $('#lightboxPrev').addEventListener('click', () => openPhoto(lightboxIndex - 1));
   $('#lightboxNext').addEventListener('click', () => openPhoto(lightboxIndex + 1));
