@@ -271,6 +271,8 @@
             <div class="attendance-options"><label><input type="radio" name="asiste" value="si" required><span data-value="rsvp.opcionSi"></span><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></label><label><input type="radio" name="asiste" value="no"><span data-value="rsvp.opcionNo"></span></label></div>
             <p class="field-error" id="attendanceError" hidden></p>
           </fieldset>
+          <!-- Puestos a ocupar: solo se pide a quien confirma que asiste -->
+          <div class="field" id="seatsField" hidden><label for="guestSeats" data-value="rsvp.etiquetaPuestos"></label><input id="guestSeats" name="puestos" type="number" inputmode="numeric" min="1" max="99" step="1" aria-describedby="seatsError"><p class="field-error" id="seatsError" hidden></p></div>
           <div class="field"><label for="guestSong" data-value="rsvp.etiquetaCancion"></label><input id="guestSong" name="cancion" maxlength="200"></div>
           <div class="field"><label for="guestMessage" data-value="rsvp.etiquetaMensaje"></label><textarea id="guestMessage" name="mensaje" rows="3" maxlength="2000"></textarea></div>
           <button class="button button-ink submit-button" type="submit" id="submitRsvp"><span data-value="rsvp.boton"></span><svg class="icon"><use href="#i-arrow"/></svg></button>

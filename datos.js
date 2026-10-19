@@ -104,11 +104,13 @@ window.EVENTO_BASE = {
     etiquetaAsistencia: '¿Tendremos el placer de contar contigo?',
     opcionSi: 'Con mucho gusto',
     opcionNo: 'No podré asistir',
+    etiquetaPuestos: '¿Cuántos puestos ocuparán?',
     etiquetaCancion: 'Una canción para la pista',
     etiquetaMensaje: 'Una nota para los anfitriones (opcional)',
     boton: 'Confirmar asistencia',
     errorNombre: 'Escribe tu nombre y apellido (al menos 3 caracteres).',
     errorAsiste: 'Selecciona una opción de asistencia.',
+    errorPuestos: 'Escribe cuántos puestos ocuparán (de 1 a 99).',
   },
 
   // ===== Textos cortos de toda la invitación =====
@@ -190,6 +192,7 @@ window.EVENTO_BASE = {
     volverArriba: 'VOLVER ARRIBA ↑',
     corregir: 'Corregir mi respuesta',
     placeholderNombre: 'Tu nombre completo',
+    placeholderPuestos: 'Número de puestos, contándote a ti',
     placeholderCancion: 'Título y artista (opcional)',
     placeholderMensaje: 'Una nota para los anfitriones…',
   },

@@ -47,6 +47,7 @@
       ? `Agradeceremos tu respuesta antes del ${data.rsvp.fechaLimite}.`
       : '';
     $('#guestName').placeholder = data.textos.placeholderNombre;
+    $('#guestSeats').placeholder = data.textos.placeholderPuestos;
     $('#guestSong').placeholder = data.textos.placeholderCancion;
     $('#guestMessage').placeholder = data.textos.placeholderMensaje;
     $('#formNote').textContent = backendEnabled()
@@ -80,6 +81,7 @@
     if (Number.isInteger(seat) && seat >= 1 && seat <= 99) invitation.puestos = seat;
     renderPersonal();
     renderCompanions();
+    if (invitation.puestos) $('#guestSeats').value = invitation.puestos;
     try {
       const response = JSON.parse(localStorage.getItem(eventKey()));
       if (response && response.nombre && ['si', 'no'].includes(response.asiste)) {
@@ -111,7 +113,7 @@
   function whatsappMessage(record) {
     let text = `Hola, soy ${record.nombre}. ${record.asiste === 'si' ? 'Confirmo mi asistencia' : 'Lamento no poder asistir'} a los XV de ${data.nombreCompleto}.\n${data.fechaTexto} · ${data.horaTexto}\n${data.lugar.nombre}${data.lugar.salon ? ' · ' + data.lugar.salon : ''}`;
     if (record.familia) text += '\nInvitación: ' + record.familia;
-    if (record.puestos) text += '\nLugares reservados: ' + record.puestos;
+    if (record.puestos) text += '\nPuestos a ocupar: ' + record.puestos;
     if (record.acompanantes?.length) text += '\nAcompañantes: ' + record.acompanantes.join(', ');
     if (record.cancion) text += '\nCanción: ' + record.cancion;
     if (record.mensaje) text += '\nMi mensaje: ' + record.mensaje;
@@ -177,6 +179,15 @@
       form.querySelector('input[name=asiste]').focus();
       return;
     }
+    const seats = Number($('#guestSeats').value);
+    const seatsOk = choice.value !== 'si' || (Number.isInteger(seats) && seats >= 1 && seats <= 99);
+    $('#seatsError').textContent = data.rsvp.errorPuestos;
+    $('#seatsError').hidden = seatsOk;
+    $('#guestSeats').setAttribute('aria-invalid', String(!seatsOk));
+    if (!seatsOk) {
+      $('#guestSeats').focus();
+      return;
+    }
     if (!backendEnabled() && !validPhone()) {
       $('#submitError').hidden = false;
       $('#submitError').textContent =
@@ -190,7 +201,7 @@
         .map((el) => el.value.trim())
         .filter(Boolean),
       familia: invitation.familia || null,
-      puestos: invitation.puestos,
+      puestos: choice.value === 'si' ? seats : null,
       cancion: $('#guestSong').value.trim(),
       mensaje: $('#guestMessage').value.trim(),
       codigo: codeFor(name),
@@ -230,16 +241,23 @@
   }
 
   // ===== Botones y arranque =====
+  // La pregunta de puestos aparece al elegir "Con mucho gusto".
+  function showSeats() {
+    $('#seatsField').hidden = $('#rsvpForm').querySelector('input[name=asiste]:checked')?.value !== 'si';
+  }
+  $$('input[name=asiste]').forEach((el) => el.addEventListener('change', showSeats));
   $('#rsvpForm').addEventListener('submit', submitResponse);
   $('#editResponse').addEventListener('click', () => {
     if (!ownResponse) return;
     $('#guestName').value = ownResponse.nombre;
     $('#guestSong').value = ownResponse.cancion;
     $('#guestMessage').value = ownResponse.mensaje;
+    $('#guestSeats').value = ownResponse.puestos || '';
     $('#rsvpForm').querySelector(`input[value="${ownResponse.asiste}"]`).checked = true;
     $$('.companion-field input').forEach(
       (el, i) => (el.value = ownResponse.acompanantes?.[i] || ''),
     );
+    showSeats();
     $('#responseCard').hidden = true;
     $('#rsvpForm').hidden = false;
     $('#guestName').focus();
