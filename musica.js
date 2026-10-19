@@ -106,6 +106,8 @@
   });
   audio.addEventListener('playing', () => {
     heard = true;
+    // Una vez que suena, ya no hace falta el aviso de "Toca para escuchar la música".
+    document.body.classList.add('music-heard');
   });
   audio.addEventListener('play', () => setState(true));
   audio.addEventListener('pause', () => setState(false));

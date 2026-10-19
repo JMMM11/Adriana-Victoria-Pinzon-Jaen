@@ -94,7 +94,7 @@ window.EVENTO_BASE = {
 
   // ===== Página de confirmación de asistencia =====
   rsvp: {
-    fechaLimite: '',
+    fechaLimite: '25 de octubre de 2026',
     whatsapp: '',
     mensajeGracias: 'Gracias por acompañar a Adriana en esta nueva temporada.',
     mensajeNoAsiste: 'Muchas gracias por tomarte el tiempo de ver esta invitación.',
@@ -182,6 +182,7 @@ window.EVENTO_BASE = {
     puestos: 'Lugares reservados para ti',
     musica: 'Escuchar la velada',
     sinMusica: 'Pausar la música',
+    musicaAviso: 'Toca para escuchar la música',
     cuando: 'CUÁNDO',
     donde: 'DÓNDE',
     descubrir: 'DESCUBRE LA HISTORIA',

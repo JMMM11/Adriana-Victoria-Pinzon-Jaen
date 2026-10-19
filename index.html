@@ -81,6 +81,7 @@
         </div>
       </div>
       <p class="arrival-caption" id="arrivalStatus" role="status" data-text="entradaPalacio"></p>
+      <p class="arrival-music music-hint-text"><svg class="icon" aria-hidden="true"><use href="#i-music"/></svg><span data-text="musicaAviso"></span></p>
       <div class="arrival-progress" aria-hidden="true"><i></i></div>
     </dialog>
 
@@ -307,7 +308,8 @@
   </footer>
 
   <!-- ===== Música de fondo y avisos ===== -->
-  <button class="music-toggle" id="musicToggle" aria-label="Escuchar la velada" aria-pressed="false"><svg class="icon"><use href="#i-music"/></svg><span data-text="musica"></span><i></i></button>
+  <!-- Botón de música; su aviso "Toca para escuchar" se ve hasta que suena (el teléfono exige un toque). -->
+  <button class="music-toggle" id="musicToggle" aria-label="Escuchar la velada" aria-pressed="false"><svg class="icon"><use href="#i-music"/></svg><span data-text="musica"></span><i></i><small class="music-hint music-hint-text" data-text="musicaAviso"></small></button>
   <audio id="eventAudio" src="Audio.mp3" loop preload="auto"></audio>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
