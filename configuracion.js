@@ -1,7 +1,7 @@
 /* Configuración de la anfitriona. No crea opciones de edición en la página. */
 window.CONFIGURACION_ADRIANA = {
   // Número completo, solo dígitos: código de país y número.
-  whatsapp: '50760028971',
+  whatsapp: '50763303003',
   // Foto de la quinceañera. Guarda la imagen en assets/fotos/ y escribe aquí su ruta.
   // Ejemplo: fotoAdriana: 'assets/fotos/adriana.jpg'
   // Vacío = el marco muestra el monograma AV.
