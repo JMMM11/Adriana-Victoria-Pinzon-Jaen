@@ -261,6 +261,17 @@
       </div>
 
       <div class="rsvp-form-wrap">
+        <!-- Cuenta regresiva para la gran noche: confirmar.js actualiza los números cada segundo -->
+        <div class="countdown" id="countdown" role="timer" hidden>
+          <p class="countdown-title" data-text="cuentaEtiqueta"></p>
+          <div class="countdown-units" id="countdownUnits">
+            <div><b id="cdDias">00</b><span>Días</span></div>
+            <div><b id="cdHoras">00</b><span>Horas</span></div>
+            <div><b id="cdMinutos">00</b><span>Minutos</span></div>
+            <div><b id="cdSegundos">00</b><span>Segundos</span></div>
+          </div>
+          <p class="countdown-done" id="countdownDone" hidden></p>
+        </div>
         <!-- Formulario de confirmación -->
         <form id="rsvpForm" novalidate>
           <div class="field"><label for="guestName" data-value="rsvp.etiquetaNombre"></label><input id="guestName" name="nombre" autocomplete="name" maxlength="120" required aria-describedby="nameError"><p class="field-error" id="nameError" hidden></p></div>

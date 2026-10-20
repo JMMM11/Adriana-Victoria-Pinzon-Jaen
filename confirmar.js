@@ -262,6 +262,34 @@
     $('#rsvpForm').hidden = false;
     $('#guestName').focus();
   });
+  // ===== Cuenta regresiva hasta la fecha y hora del evento (fechaISO en datos.js) =====
+  const start = Date.parse(data.fechaISO);
+  const end = start + 7 * 3600e3; // la fiesta va de 8:00 p. m. a 3:00 a. m.
+  const pad = (n) => String(n).padStart(2, '0');
+  function tick() {
+    const left = start - Date.now();
+    const done = left <= 0;
+    $('#countdownUnits').hidden = done;
+    $('#countdownDone').hidden = !done;
+    $('.countdown-title').hidden = done;
+    if (done) {
+      $('#countdownDone').textContent = Date.now() < end ? data.textos.cuentaHoy : data.textos.cuentaFin;
+      return false;
+    }
+    const s = Math.floor(left / 1000);
+    $('#cdDias').textContent = pad(Math.floor(s / 86400));
+    $('#cdHoras').textContent = pad(Math.floor(s / 3600) % 24);
+    $('#cdMinutos').textContent = pad(Math.floor(s / 60) % 60);
+    $('#cdSegundos').textContent = pad(s % 60);
+    return true;
+  }
+  if (start) {
+    $('#countdown').hidden = false;
+    if (tick()) {
+      const timer = setInterval(() => tick() || clearInterval(timer), 1000);
+    }
+  }
+
   render();
   loadPersonal();
 })();
